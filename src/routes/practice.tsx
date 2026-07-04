@@ -38,8 +38,9 @@ export const Route = createFileRoute("/practice")({
 type Status = "idle" | "correct" | "incorrect";
 
 function Practice() {
-  const { lang, tense } = Route.useSearch();
+  const { lang, tense } = Route.useSearch() as { lang: LanguageCode; tense: TenseCode };
   const navigate = useNavigate({ from: "/practice" });
+  type Search = { lang: LanguageCode; tense: TenseCode };
 
   const [exercise, setExercise] = useState<Exercise>(() =>
     generateExercise(lang, tense),
