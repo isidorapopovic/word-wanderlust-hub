@@ -340,11 +340,32 @@ function fallbackTemplate(
   };
 }
 
+export type ExerciseMode = "sentence" | "verb";
+
 export function generateExercise(
   language: LanguageCode,
   tense: TenseCode,
+  mode: ExerciseMode = "sentence",
 ): Exercise {
   const verb = pick(VERBS[language]);
+
+  if (mode === "verb") {
+    const person = pick(PERSONS).code;
+    const answer = verb.forms[tense][person];
+    const pron = PERSONS.find((p) => p.code === person)!.pronoun[language];
+    const prompt = `${pron.charAt(0).toUpperCase() + pron.slice(1)} _____`;
+    return {
+      language,
+      tense,
+      verb,
+      person,
+      prompt,
+      translation: `${PERSONS.find((p) => p.code === person)!.englishPronoun} — ${verb.english}`,
+      answer,
+      accepted: [normalizeAnswer(answer)],
+    };
+  }
+
   const templates = verb.sentences?.[tense];
   const template =
     templates && templates.length > 0
@@ -364,6 +385,15 @@ export function generateExercise(
     answer,
     accepted: [normalizeAnswer(answer)],
   };
+}
+
+export function generateExerciseFromTenses(
+  language: LanguageCode,
+  tenses: TenseCode[],
+  mode: ExerciseMode = "sentence",
+): Exercise {
+  const tense = tenses.length > 0 ? pick(tenses) : "present";
+  return generateExercise(language, tense, mode);
 }
 
 export function checkAnswer(exercise: Exercise, input: string): boolean {
