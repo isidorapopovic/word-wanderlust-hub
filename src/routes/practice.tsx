@@ -104,7 +104,7 @@ function Practice() {
                 <button
                   key={l.code}
                   onClick={() =>
-                    navigate({ search: (s) => ({ ...s, lang: l.code }) })
+                    navigate({ search: (s: Search) => ({ ...s, lang: l.code }) })
                   }
                   className={`rounded-full border px-4 py-2 text-sm transition ${
                     l.code === lang
@@ -127,7 +127,7 @@ function Practice() {
                 <button
                   key={t.code}
                   onClick={() =>
-                    navigate({ search: (s) => ({ ...s, tense: t.code }) })
+                    navigate({ search: (s: Search) => ({ ...s, tense: t.code }) })
                   }
                   className={`rounded-full border px-4 py-2 text-sm transition ${
                     t.code === tense
