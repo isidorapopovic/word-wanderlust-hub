@@ -6,18 +6,32 @@ import {
   TENSES,
   PERSONS,
   VERBS,
-  generateExercise,
+  generateExerciseFromTenses,
   checkAnswer,
   type Exercise,
+  type ExerciseMode,
   type LanguageCode,
   type TenseCode,
 } from "@/lib/verbs";
 
+const TENSE_CODES = ["present", "future", "imperfect", "past_perfect"] as const;
+
+// `tenses` is a comma-separated list in the URL (e.g. "present,future").
 const searchSchema = z.object({
   lang: z.enum(["it", "fr", "es"]).catch("it"),
-  tense: z
-    .enum(["present", "future", "imperfect", "past_perfect"])
-    .catch("present"),
+  tenses: z
+    .string()
+    .catch("present")
+    .transform((s) => {
+      const parts = s
+        .split(",")
+        .map((p) => p.trim())
+        .filter((p): p is TenseCode =>
+          (TENSE_CODES as readonly string[]).includes(p),
+        );
+      return parts.length > 0 ? parts : (["present"] as TenseCode[]);
+    }),
+  mode: z.enum(["sentence", "verb"]).catch("sentence"),
 });
 
 export const Route = createFileRoute("/practice")({
@@ -36,28 +50,30 @@ export const Route = createFileRoute("/practice")({
 });
 
 type Status = "idle" | "correct" | "incorrect";
+type Search = { lang: LanguageCode; tenses: TenseCode[]; mode: ExerciseMode };
 
 function Practice() {
-  const { lang, tense } = Route.useSearch() as { lang: LanguageCode; tense: TenseCode };
+  const { lang, tenses, mode } = Route.useSearch() as Search;
   const navigate = useNavigate({ from: "/practice" });
-  type Search = { lang: LanguageCode; tense: TenseCode };
 
   const [exercise, setExercise] = useState<Exercise>(() =>
-    generateExercise(lang, tense),
+    generateExerciseFromTenses(lang, tenses, mode),
   );
   const [input, setInput] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [score, setScore] = useState({ correct: 0, total: 0 });
 
-  // Regenerate whenever language/tense changes.
+  const tensesKey = tenses.join(",");
+
   useEffect(() => {
-    setExercise(generateExercise(lang, tense));
+    setExercise(generateExerciseFromTenses(lang, tenses, mode));
     setInput("");
     setStatus("idle");
-  }, [lang, tense]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lang, tensesKey, mode]);
 
   const language = LANGUAGES.find((l) => l.code === lang)!;
-  const tenseInfo = TENSES.find((t) => t.code === tense)!;
+  const exerciseTense = TENSES.find((t) => t.code === exercise.tense)!;
   const person = PERSONS.find((p) => p.code === exercise.person)!;
 
   const availableVerbs = useMemo(() => VERBS[lang].length, [lang]);
@@ -67,13 +83,33 @@ function Practice() {
     if (status !== "idle" || input.trim() === "") return;
     const ok = checkAnswer(exercise, input);
     setStatus(ok ? "correct" : "incorrect");
-    setScore((s) => ({ correct: s.correct + (ok ? 1 : 0), total: s.total + 1 }));
+    setScore((s) => ({
+      correct: s.correct + (ok ? 1 : 0),
+      total: s.total + 1,
+    }));
   }
 
   function next() {
-    setExercise(generateExercise(lang, tense));
+    setExercise(generateExerciseFromTenses(lang, tenses, mode));
     setInput("");
     setStatus("idle");
+  }
+
+  function toggleTense(code: TenseCode) {
+    const has = tenses.includes(code);
+    const nextTenses = has
+      ? tenses.filter((t) => t !== code)
+      : [...tenses, code];
+    if (nextTenses.length === 0) return; // keep at least one selected
+    const ordered = TENSES.map((t) => t.code).filter((c) =>
+      nextTenses.includes(c),
+    );
+    navigate({
+      search: (s: Search) => ({
+        ...s,
+        tenses: ordered.join(",") as unknown as TenseCode[],
+      }),
+    });
   }
 
   return (
@@ -93,8 +129,7 @@ function Practice() {
       </header>
 
       <main className="mx-auto max-w-3xl px-6 py-10">
-        {/* Controls */}
-        <section className="grid gap-6 md:grid-cols-2 mb-10">
+        <section className="grid gap-6 mb-8">
           <div>
             <label className="text-xs uppercase tracking-widest text-muted-foreground">
               Language
@@ -104,7 +139,9 @@ function Practice() {
                 <button
                   key={l.code}
                   onClick={() =>
-                    navigate({ search: (s: Search) => ({ ...s, lang: l.code }) })
+                    navigate({
+                      search: (s: Search) => ({ ...s, lang: l.code }),
+                    })
                   }
                   className={`rounded-full border px-4 py-2 text-sm transition ${
                     l.code === lang
@@ -118,37 +155,73 @@ function Practice() {
               ))}
             </div>
           </div>
+
+          <div>
+            <div className="flex items-baseline justify-between">
+              <label className="text-xs uppercase tracking-widest text-muted-foreground">
+                Tenses (select one or more)
+              </label>
+              <span className="text-xs text-muted-foreground">
+                {tenses.length} selected
+              </span>
+            </div>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {TENSES.map((t) => {
+                const active = tenses.includes(t.code);
+                return (
+                  <button
+                    key={t.code}
+                    onClick={() => toggleTense(t.code)}
+                    aria-pressed={active}
+                    className={`rounded-full border px-4 py-2 text-sm transition ${
+                      active
+                        ? "border-primary bg-primary text-primary-foreground"
+                        : "border-border bg-card hover:border-primary/50"
+                    }`}
+                  >
+                    {t.name}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
           <div>
             <label className="text-xs uppercase tracking-widest text-muted-foreground">
-              Tense
+              Exercise mode
             </label>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {TENSES.map((t) => (
+            <div className="mt-2 inline-flex rounded-full border border-border bg-card p-1">
+              {(
+                [
+                  { code: "sentence", label: "Sentences" },
+                  { code: "verb", label: "Verbs only" },
+                ] as { code: ExerciseMode; label: string }[]
+              ).map((m) => (
                 <button
-                  key={t.code}
+                  key={m.code}
                   onClick={() =>
-                    navigate({ search: (s: Search) => ({ ...s, tense: t.code }) })
+                    navigate({
+                      search: (s: Search) => ({ ...s, mode: m.code }),
+                    })
                   }
-                  className={`rounded-full border px-4 py-2 text-sm transition ${
-                    t.code === tense
-                      ? "border-primary bg-primary text-primary-foreground"
-                      : "border-border bg-card hover:border-primary/50"
+                  className={`rounded-full px-4 py-1.5 text-sm transition ${
+                    mode === m.code
+                      ? "bg-primary text-primary-foreground"
+                      : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
-                  {t.name}
+                  {m.label}
                 </button>
               ))}
             </div>
+            <p className="mt-2 text-xs text-muted-foreground">
+              {mode === "sentence"
+                ? "Fill in the missing verb inside a full sentence."
+                : "Just conjugate the verb for the given pronoun — no context."}
+            </p>
           </div>
         </section>
 
-        {/* Tense description */}
-        <div className="mb-8 rounded-2xl bg-secondary/60 p-5 text-sm text-secondary-foreground">
-          <span className="font-medium">{tenseInfo.name} in {language.name}:</span>{" "}
-          {tenseInfo.description}
-        </div>
-
-        {/* Exercise card */}
         <section className="rounded-3xl border border-border bg-card p-8 shadow-sm">
           <div className="flex flex-wrap items-baseline justify-between gap-2 text-sm text-muted-foreground">
             <div>
@@ -161,7 +234,7 @@ function Practice() {
               </span>
             </div>
             <div>
-              {person.englishPronoun} · {tenseInfo.name}
+              {person.englishPronoun} · {exerciseTense.name}
             </div>
           </div>
 
@@ -178,7 +251,7 @@ function Practice() {
                   setInput(e.target.value);
                   if (status !== "idle") setStatus("idle");
                 }}
-                placeholder={`Type the ${tenseInfo.name.toLowerCase()} form…`}
+                placeholder={`Type the ${exerciseTense.name.toLowerCase()} form…`}
                 className="flex-1 min-w-[220px] rounded-full border border-input bg-background px-5 py-3 font-sans text-base outline-none transition focus:border-primary focus:ring-2 focus:ring-ring/30"
                 disabled={status !== "idle"}
                 autoComplete="off"
@@ -213,7 +286,11 @@ function Practice() {
               }`}
             >
               {status === "correct" ? (
-                <>Correct! <span className="font-medium">{exercise.answer}</span> — {exercise.translation}</>
+                <>
+                  Correct!{" "}
+                  <span className="font-medium">{exercise.answer}</span> —{" "}
+                  {exercise.translation}
+                </>
               ) : (
                 <>
                   Not quite. The answer is{" "}
@@ -249,7 +326,9 @@ function renderPromptWithBlank(
   return (
     <>
       {parts[0]}
-      <span className={`font-semibold underline decoration-dotted underline-offset-4 ${cls}`}>
+      <span
+        className={`font-semibold underline decoration-dotted underline-offset-4 ${cls}`}
+      >
         {filled}
       </span>
       {parts[1] ?? ""}
