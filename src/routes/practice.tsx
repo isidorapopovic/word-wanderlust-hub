@@ -13,6 +13,17 @@ import {
   type LanguageCode,
   type TenseCode,
 } from "@/lib/verbs";
+import {
+  generateParagraphExercise,
+  checkParagraphBlank,
+  type ParagraphExercise,
+} from "@/lib/paragraphs";
+import {
+  loadStats,
+  recordAttempt,
+  defaultStats,
+  type StatsState,
+} from "@/lib/stats";
 
 const TENSE_CODES = ["present", "future", "imperfect", "past_perfect"] as const;
 
@@ -31,7 +42,7 @@ const searchSchema = z.object({
         );
       return parts.length > 0 ? parts : (["present"] as TenseCode[]);
     }),
-  mode: z.enum(["sentence", "verb"]).catch("sentence"),
+  mode: z.enum(["sentence", "verb", "paragraph"]).catch("sentence"),
 });
 
 export const Route = createFileRoute("/practice")({
@@ -42,7 +53,7 @@ export const Route = createFileRoute("/practice")({
       {
         name: "description",
         content:
-          "Fill-in-the-blank verb conjugation practice for Italian, French and Spanish.",
+          "Fill-in-the-blank verb conjugation practice for Italian, French and Spanish — sentences, bare verb forms, or short paragraphs.",
       },
     ],
   }),
@@ -52,47 +63,120 @@ export const Route = createFileRoute("/practice")({
 type Status = "idle" | "correct" | "incorrect";
 type Search = { lang: LanguageCode; tenses: TenseCode[]; mode: ExerciseMode };
 
+const MODES: { code: ExerciseMode; label: string }[] = [
+  { code: "sentence", label: "Sentences" },
+  { code: "verb", label: "Verbs only" },
+  { code: "paragraph", label: "Paragraph" },
+];
+
 function Practice() {
   const { lang, tenses, mode } = Route.useSearch() as Search;
   const navigate = useNavigate({ from: "/practice" });
 
-  const [exercise, setExercise] = useState<Exercise>(() =>
-    generateExerciseFromTenses(lang, tenses, mode),
+  const [exercise, setExercise] = useState<Exercise | null>(() =>
+    mode === "paragraph" ? null : generateExerciseFromTenses(lang, tenses, mode),
   );
   const [input, setInput] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [score, setScore] = useState({ correct: 0, total: 0 });
 
+  const [paragraph, setParagraph] = useState<ParagraphExercise | null>(() =>
+    mode === "paragraph" ? generateParagraphExercise(lang, tenses) : null,
+  );
+  const [pInputs, setPInputs] = useState<string[]>(
+    paragraph ? new Array(paragraph.template.blanks.length).fill("") : [],
+  );
+  const [pChecked, setPChecked] = useState(false);
+  const [pResults, setPResults] = useState<boolean[]>([]);
+
+  const [stats, setStats] = useState<StatsState>(() => defaultStats());
+  useEffect(() => {
+    setStats(loadStats());
+  }, []);
+
   const tensesKey = tenses.join(",");
 
   useEffect(() => {
-    setExercise(generateExerciseFromTenses(lang, tenses, mode));
-    setInput("");
-    setStatus("idle");
+    if (mode === "paragraph") {
+      const p = generateParagraphExercise(lang, tenses);
+      setParagraph(p);
+      setPInputs(new Array(p.template.blanks.length).fill(""));
+      setPChecked(false);
+      setPResults([]);
+      setExercise(null);
+    } else {
+      setExercise(generateExerciseFromTenses(lang, tenses, mode));
+      setInput("");
+      setStatus("idle");
+      setParagraph(null);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lang, tensesKey, mode]);
 
   const language = LANGUAGES.find((l) => l.code === lang)!;
-  const exerciseTense = TENSES.find((t) => t.code === exercise.tense)!;
-  const person = PERSONS.find((p) => p.code === exercise.person)!;
+  const exerciseTense = exercise
+    ? TENSES.find((t) => t.code === exercise.tense)!
+    : null;
+  const person = exercise
+    ? PERSONS.find((p) => p.code === exercise.person)!
+    : null;
 
   const availableVerbs = useMemo(() => VERBS[lang].length, [lang]);
 
   function submit(e: React.FormEvent) {
     e.preventDefault();
-    if (status !== "idle" || input.trim() === "") return;
+    if (!exercise || status !== "idle" || input.trim() === "") return;
     const ok = checkAnswer(exercise, input);
     setStatus(ok ? "correct" : "incorrect");
     setScore((s) => ({
       correct: s.correct + (ok ? 1 : 0),
       total: s.total + 1,
     }));
+    setStats(
+      recordAttempt({
+        language: lang,
+        tense: exercise.tense,
+        verb: exercise.verb.infinitive,
+        correct: ok,
+      }),
+    );
   }
 
   function next() {
     setExercise(generateExerciseFromTenses(lang, tenses, mode));
     setInput("");
     setStatus("idle");
+  }
+
+  function checkParagraph(e: React.FormEvent) {
+    e.preventDefault();
+    if (!paragraph || pChecked) return;
+    const results = pInputs.map((val, i) => checkParagraphBlank(paragraph, i, val));
+    setPResults(results);
+    setPChecked(true);
+    setScore((s) => ({
+      correct: s.correct + results.filter(Boolean).length,
+      total: s.total + results.length,
+    }));
+
+    let latest = stats;
+    paragraph.template.blanks.forEach((b, i) => {
+      latest = recordAttempt({
+        language: lang,
+        tense: b.tense,
+        verb: b.infinitive,
+        correct: results[i],
+      });
+    });
+    setStats(latest);
+  }
+
+  function nextParagraph() {
+    const p = generateParagraphExercise(lang, tenses);
+    setParagraph(p);
+    setPInputs(new Array(p.template.blanks.length).fill(""));
+    setPChecked(false);
+    setPResults([]);
   }
 
   function toggleTense(code: TenseCode) {
@@ -119,10 +203,15 @@ function Practice() {
           <Link to="/" className="font-display text-xl font-semibold">
             Lingua<span className="text-primary">.</span>
           </Link>
-          <div className="text-sm text-muted-foreground">
-            Score:{" "}
-            <span className="font-medium text-foreground">
-              {score.correct}/{score.total}
+          <div className="flex items-center gap-4 text-sm text-muted-foreground">
+            <Link to="/stats" className="hover:text-foreground">
+              🔥 {stats.streak.current} day streak
+            </Link>
+            <span>
+              Score:{" "}
+              <span className="font-medium text-foreground">
+                {score.correct}/{score.total}
+              </span>
             </span>
           </div>
         </div>
@@ -191,12 +280,7 @@ function Practice() {
               Exercise mode
             </label>
             <div className="mt-2 inline-flex rounded-full border border-border bg-card p-1">
-              {(
-                [
-                  { code: "sentence", label: "Sentences" },
-                  { code: "verb", label: "Verbs only" },
-                ] as { code: ExerciseMode; label: string }[]
-              ).map((m) => (
+              {MODES.map((m) => (
                 <button
                   key={m.code}
                   onClick={() =>
@@ -217,93 +301,169 @@ function Practice() {
             <p className="mt-2 text-xs text-muted-foreground">
               {mode === "sentence"
                 ? "Fill in the missing verb inside a full sentence."
-                : "Just conjugate the verb for the given pronoun — no context."}
+                : mode === "verb"
+                  ? "Just conjugate the verb for the given pronoun — no context."
+                  : "Fill in several blanks in a short passage using different verbs."}
             </p>
           </div>
         </section>
 
-        <section className="rounded-3xl border border-border bg-card p-8 shadow-sm">
-          <div className="flex flex-wrap items-baseline justify-between gap-2 text-sm text-muted-foreground">
-            <div>
-              Conjugate{" "}
-              <span className="font-display text-xl italic text-foreground">
-                {exercise.verb.infinitive}
-              </span>{" "}
-              <span className="text-muted-foreground">
-                ({exercise.verb.english})
-              </span>
+        {mode !== "paragraph" && exercise && exerciseTense && person && (
+          <section className="rounded-3xl border border-border bg-card p-8 shadow-sm">
+            <div className="flex flex-wrap items-baseline justify-between gap-2 text-sm text-muted-foreground">
+              <div>
+                Conjugate{" "}
+                <span className="font-display text-xl italic text-foreground">
+                  {exercise.verb.infinitive}
+                </span>{" "}
+                <span className="text-muted-foreground">
+                  ({exercise.verb.english})
+                </span>
+              </div>
+              <div>
+                {person.englishPronoun} · {exerciseTense.name}
+              </div>
             </div>
-            <div>
-              {person.englishPronoun} · {exerciseTense.name}
-            </div>
-          </div>
 
-          <form onSubmit={submit} className="mt-6">
-            <p className="font-display text-2xl md:text-3xl leading-snug">
-              {renderPromptWithBlank(exercise.prompt, input, status)}
-            </p>
+            <form onSubmit={submit} className="mt-6">
+              <p className="font-display text-2xl md:text-3xl leading-snug">
+                {renderPromptWithBlank(exercise.prompt, input, status)}
+              </p>
 
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <input
-                autoFocus
-                value={input}
-                onChange={(e) => {
-                  setInput(e.target.value);
-                  if (status !== "idle") setStatus("idle");
-                }}
-                placeholder={`Type the ${exerciseTense.name.toLowerCase()} form…`}
-                className="flex-1 min-w-[220px] rounded-full border border-input bg-background px-5 py-3 font-sans text-base outline-none transition focus:border-primary focus:ring-2 focus:ring-ring/30"
-                disabled={status !== "idle"}
-                autoComplete="off"
-                spellCheck={false}
-              />
-              {status === "idle" ? (
-                <button
-                  type="submit"
-                  className="rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:opacity-90 disabled:opacity-50"
-                  disabled={input.trim() === ""}
-                >
-                  Check
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={next}
-                  className="rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
-                >
-                  Next →
-                </button>
-              )}
-            </div>
-          </form>
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <input
+                  autoFocus
+                  value={input}
+                  onChange={(e) => {
+                    setInput(e.target.value);
+                    if (status !== "idle") setStatus("idle");
+                  }}
+                  placeholder={`Type the ${exerciseTense.name.toLowerCase()} form…`}
+                  className="flex-1 min-w-[220px] rounded-full border border-input bg-background px-5 py-3 font-sans text-base outline-none transition focus:border-primary focus:ring-2 focus:ring-ring/30"
+                  disabled={status !== "idle"}
+                  autoComplete="off"
+                  spellCheck={false}
+                />
+                {status === "idle" ? (
+                  <button
+                    type="submit"
+                    className="rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:opacity-90 disabled:opacity-50"
+                    disabled={input.trim() === ""}
+                  >
+                    Check
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={next}
+                    className="rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
+                  >
+                    Next →
+                  </button>
+                )}
+              </div>
+            </form>
 
-          {status !== "idle" && (
-            <div
-              className={`mt-6 rounded-2xl p-4 text-sm ${
-                status === "correct"
-                  ? "bg-[oklch(0.94_0.05_155)] text-[oklch(0.32_0.09_155)]"
-                  : "bg-[oklch(0.95_0.05_25)] text-[oklch(0.35_0.13_25)]"
-              }`}
-            >
-              {status === "correct" ? (
-                <>
-                  Correct!{" "}
-                  <span className="font-medium">{exercise.answer}</span> —{" "}
-                  {exercise.translation}
-                </>
-              ) : (
-                <>
-                  Not quite. The answer is{" "}
-                  <span className="font-medium">{exercise.answer}</span>.<br />
-                  <span className="opacity-80">{exercise.translation}</span>
-                </>
-              )}
+            {status !== "idle" && (
+              <div
+                className={`mt-6 rounded-2xl p-4 text-sm ${
+                  status === "correct"
+                    ? "bg-[oklch(0.94_0.05_155)] text-[oklch(0.32_0.09_155)]"
+                    : "bg-[oklch(0.95_0.05_25)] text-[oklch(0.35_0.13_25)]"
+                }`}
+              >
+                {status === "correct" ? (
+                  <>
+                    Correct!{" "}
+                    <span className="font-medium">{exercise.answer}</span> —{" "}
+                    {exercise.translation}
+                  </>
+                ) : (
+                  <>
+                    Not quite. The answer is{" "}
+                    <span className="font-medium">{exercise.answer}</span>.<br />
+                    <span className="opacity-80">{exercise.translation}</span>
+                  </>
+                )}
+              </div>
+            )}
+          </section>
+        )}
+
+        {mode === "paragraph" && paragraph && (
+          <section className="rounded-3xl border border-border bg-card p-8 shadow-sm">
+            <div className="text-sm text-muted-foreground">
+              {paragraph.template.title}
             </div>
-          )}
-        </section>
+
+            <form onSubmit={checkParagraph} className="mt-6">
+              <p className="font-display text-xl md:text-2xl leading-relaxed">
+                {paragraph.segments.map((seg, i) => (
+                  <span key={i}>
+                    {seg}
+                    {i < paragraph.template.blanks.length && (
+                      <input
+                        value={pInputs[i] ?? ""}
+                        onChange={(e) => {
+                          const nextInputs = [...pInputs];
+                          nextInputs[i] = e.target.value;
+                          setPInputs(nextInputs);
+                        }}
+                        disabled={pChecked}
+                        autoComplete="off"
+                        spellCheck={false}
+                        className={`mx-1 w-28 rounded-md border px-2 py-1 align-baseline text-base outline-none transition ${
+                          pChecked
+                            ? pResults[i]
+                              ? "border-[oklch(0.6_0.13_155)] bg-[oklch(0.94_0.05_155)] text-[oklch(0.32_0.09_155)]"
+                              : "border-destructive bg-[oklch(0.95_0.05_25)] text-destructive"
+                            : "border-input bg-background focus:border-primary focus:ring-2 focus:ring-ring/30"
+                        }`}
+                      />
+                    )}
+                  </span>
+                ))}
+              </p>
+
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                {!pChecked ? (
+                  <button
+                    type="submit"
+                    className="rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:opacity-90 disabled:opacity-50"
+                    disabled={pInputs.some((v) => v.trim() === "")}
+                  >
+                    Check
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={nextParagraph}
+                    className="rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:opacity-90"
+                  >
+                    Next →
+                  </button>
+                )}
+              </div>
+            </form>
+
+            {pChecked && (
+              <div className="mt-6 rounded-2xl bg-secondary p-4 text-sm">
+                <div className="mb-2 font-medium text-foreground">
+                  {pResults.filter(Boolean).length}/{pResults.length} correct
+                </div>
+                {!pResults.every(Boolean) && (
+                  <p className="mb-2 text-muted-foreground">
+                    Correct answers: {paragraph.answers.join(", ")}
+                  </p>
+                )}
+                <p className="opacity-80">{paragraph.template.translation}</p>
+              </div>
+            )}
+          </section>
+        )}
 
         <p className="mt-6 text-center text-xs text-muted-foreground">
-          {availableVerbs} verbs available in {language.name}. More coming soon.
+          {availableVerbs} verbs available in {language.name}.
         </p>
       </main>
     </div>

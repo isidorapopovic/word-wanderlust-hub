@@ -112,6 +112,9 @@ function Header() {
           <a href="#languages" className="text-muted-foreground hover:text-foreground">
             Languages
           </a>
+          <Link to="/stats" className="text-muted-foreground hover:text-foreground">
+            Stats
+          </Link>
           <Link
             to="/practice"
             search={{ lang: "it", tenses: "present", mode: "sentence" }}
