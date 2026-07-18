@@ -333,9 +333,6 @@ const italianVerbs: VerbEntry[] = [
             past_perfect: [{ person: "3p", template: "Loro {verb} già il messaggio prima di partire.", translation: "They had already written the message before leaving." }],
         },
     },
-    // The verbs below have conjugation tables only (no curated example
-    // sentences); the practice engine falls back to a simple generated
-    // sentence for these via fallbackTemplate().
     {
         infinitive: "prendere",
         english: "to take",
@@ -344,6 +341,12 @@ const italianVerbs: VerbEntry[] = [
             future: { "1s": "prenderò", "2s": "prenderai", "3s": "prenderà", "1p": "prenderemo", "2p": "prenderete", "3p": "prenderanno" },
             imperfect: { "1s": "prendevo", "2s": "prendevi", "3s": "prendeva", "1p": "prendevamo", "2p": "prendevate", "3p": "prendevano" },
             past_perfect: { "1s": "avevo preso", "2s": "avevi preso", "3s": "aveva preso", "1p": "avevamo preso", "2p": "avevate preso", "3p": "avevano preso" },
+        },
+        sentences: {
+            present: [{ person: "1s", template: "Io {verb} il caffè ogni mattina.", translation: "I take coffee every morning." }],
+            future: [{ person: "3s", template: "Domani lui {verb} l'autobus delle nove.", translation: "Tomorrow he will take the nine o'clock bus." }],
+            imperfect: [{ person: "2p", template: "Voi {verb} sempre la stessa strada per andare a scuola.", translation: "You (pl.) always used to take the same road to school." }],
+            past_perfect: [{ person: "3p", template: "Quando siamo arrivati, loro {verb} già una decisione.", translation: "When we arrived, they had already made a decision." }],
         },
     },
     {
@@ -355,6 +358,12 @@ const italianVerbs: VerbEntry[] = [
             imperfect: { "1s": "mettevo", "2s": "mettevi", "3s": "metteva", "1p": "mettevamo", "2p": "mettevate", "3p": "mettevano" },
             past_perfect: { "1s": "avevo messo", "2s": "avevi messo", "3s": "aveva messo", "1p": "avevamo messo", "2p": "avevate messo", "3p": "avevano messo" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "Marco {verb} i libri sullo scaffale.", translation: "Marco puts the books on the shelf." }],
+            future: [{ person: "2s", template: "Domani tu {verb} la valigia in macchina.", translation: "Tomorrow you will put the suitcase in the car." }],
+            imperfect: [{ person: "1s", template: "Da bambino {verb} sempre i giocattoli qui.", translation: "As a child I always used to put my toys here." }],
+            past_perfect: [{ person: "1p", template: "Quando è arrivata, noi {verb} già la lettera nella cassetta.", translation: "When she arrived, we had already put the letter in the mailbox." }],
+        },
     },
     {
         infinitive: "aspettare",
@@ -364,6 +373,12 @@ const italianVerbs: VerbEntry[] = [
             future: { "1s": "aspetterò", "2s": "aspetterai", "3s": "aspetterà", "1p": "aspetteremo", "2p": "aspetterete", "3p": "aspetteranno" },
             imperfect: { "1s": "aspettavo", "2s": "aspettavi", "3s": "aspettava", "1p": "aspettavamo", "2p": "aspettavate", "3p": "aspettavano" },
             past_perfect: { "1s": "avevo aspettato", "2s": "avevi aspettato", "3s": "aveva aspettato", "1p": "avevamo aspettato", "2p": "avevate aspettato", "3p": "avevano aspettato" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Maria {verb} l'autobus ogni mattina.", translation: "Maria waits for the bus every morning." }],
+            future: [{ person: "1p", template: "Domani {verb} il suo arrivo.", translation: "Tomorrow we will wait for her arrival." }],
+            imperfect: [{ person: "2p", template: "Voi {verb} sempre davanti alla porta.", translation: "You (pl.) always used to wait in front of the door." }],
+            past_perfect: [{ person: "3p", template: "Loro {verb} già molto tempo quando lei è arrivata.", translation: "They had already been waiting a long time when she arrived." }],
         },
     },
     {
@@ -375,6 +390,12 @@ const italianVerbs: VerbEntry[] = [
             imperfect: { "1s": "vivevo", "2s": "vivevi", "3s": "viveva", "1p": "vivevamo", "2p": "vivevate", "3p": "vivevano" },
             past_perfect: { "1s": "avevo vissuto", "2s": "avevi vissuto", "3s": "aveva vissuto", "1p": "avevamo vissuto", "2p": "avevate vissuto", "3p": "avevano vissuto" },
         },
+        sentences: {
+            present: [{ person: "1p", template: "Noi {verb} vicino al mare.", translation: "We live near the sea." }],
+            future: [{ person: "3s", template: "Un giorno lui {verb} all'estero.", translation: "Someday he will live abroad." }],
+            imperfect: [{ person: "2p", template: "Voi {verb} sempre in campagna.", translation: "You (pl.) always used to live in the countryside." }],
+            past_perfect: [{ person: "3p", template: "Loro {verb} già lì prima di trasferirsi.", translation: "They had already lived there before moving." }],
+        },
     },
     {
         infinitive: "andare",
@@ -384,6 +405,12 @@ const italianVerbs: VerbEntry[] = [
             future: { "1s": "andrò", "2s": "andrai", "3s": "andrà", "1p": "andremo", "2p": "andrete", "3p": "andranno" },
             imperfect: { "1s": "andavo", "2s": "andavi", "3s": "andava", "1p": "andavamo", "2p": "andavate", "3p": "andavano" },
             past_perfect: { "1s": "ero andato", "2s": "eri andato", "3s": "era andato", "1p": "eravamo andati", "2p": "eravate andati", "3p": "erano andati" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Maria {verb} al mercato ogni sabato.", translation: "Maria goes to the market every Saturday." }],
+            future: [{ person: "1s", template: "Domani {verb} a Roma per lavoro.", translation: "Tomorrow I will go to Rome for work." }],
+            imperfect: [{ person: "3p", template: "Da bambini {verb} sempre al parco.", translation: "As children they always used to go to the park." }],
+            past_perfect: [{ person: "1p", template: "Quando lei è arrivata, noi {verb} già a casa.", translation: "When she arrived, we had already gone home." }],
         },
     },
     {
@@ -395,6 +422,12 @@ const italianVerbs: VerbEntry[] = [
             imperfect: { "1s": "venivo", "2s": "venivi", "3s": "veniva", "1p": "venivamo", "2p": "venivate", "3p": "venivano" },
             past_perfect: { "1s": "ero venuto", "2s": "eri venuto", "3s": "era venuto", "1p": "eravamo venuti", "2p": "eravate venuti", "3p": "erano venuti" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "Marco {verb} a trovarci ogni domenica.", translation: "Marco comes to see us every Sunday." }],
+            future: [{ person: "2s", template: "Domani tu {verb} alla festa?", translation: "Will you come to the party tomorrow?" }],
+            imperfect: [{ person: "1p", template: "Da giovani {verb} spesso in questa città.", translation: "When we were young we often used to come to this city." }],
+            past_perfect: [{ person: "3s", template: "Quando l'abbiamo chiamato, lui {verb} già alla riunione.", translation: "When we called him, he had already come to the meeting." }],
+        },
     },
     {
         infinitive: "dare",
@@ -404,6 +437,12 @@ const italianVerbs: VerbEntry[] = [
             future: { "1s": "darò", "2s": "darai", "3s": "darà", "1p": "daremo", "2p": "darete", "3p": "daranno" },
             imperfect: { "1s": "davo", "2s": "davi", "3s": "dava", "1p": "davamo", "2p": "davate", "3p": "davano" },
             past_perfect: { "1s": "avevo dato", "2s": "avevi dato", "3s": "aveva dato", "1p": "avevamo dato", "2p": "avevate dato", "3p": "avevano dato" },
+        },
+        sentences: {
+            present: [{ person: "1s", template: "Io {verb} un regalo a mia madre ogni anno.", translation: "I give a gift to my mother every year." }],
+            future: [{ person: "3p", template: "Domani {verb} una risposta al direttore.", translation: "Tomorrow they will give an answer to the director." }],
+            imperfect: [{ person: "2s", template: "Da bambino tu {verb} sempre i tuoi giocattoli agli amici.", translation: "As a child you always used to give your toys to your friends." }],
+            past_perfect: [{ person: "1p", template: "Quando è arrivato, noi {verb} già i biglietti.", translation: "When he arrived, we had already given the tickets." }],
         },
     },
     {
@@ -415,6 +454,12 @@ const italianVerbs: VerbEntry[] = [
             imperfect: { "1s": "arrivavo", "2s": "arrivavi", "3s": "arrivava", "1p": "arrivavamo", "2p": "arrivavate", "3p": "arrivavano" },
             past_perfect: { "1s": "ero arrivato", "2s": "eri arrivato", "3s": "era arrivato", "1p": "eravamo arrivati", "2p": "eravate arrivati", "3p": "erano arrivati" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "Il treno {verb} alle otto ogni mattina.", translation: "The train arrives at eight every morning." }],
+            future: [{ person: "2p", template: "Domani voi {verb} prima di noi.", translation: "Tomorrow you (pl.) will arrive before us." }],
+            imperfect: [{ person: "3p", template: "Ogni estate {verb} in ritardo.", translation: "Every summer they used to arrive late." }],
+            past_perfect: [{ person: "3s", template: "Quando abbiamo telefonato, lei {verb} già in ufficio.", translation: "When we called, she had already arrived at the office." }],
+        },
     },
     {
         infinitive: "entrare",
@@ -424,6 +469,12 @@ const italianVerbs: VerbEntry[] = [
             future: { "1s": "entrerò", "2s": "entrerai", "3s": "entrerà", "1p": "entreremo", "2p": "entrerete", "3p": "entreranno" },
             imperfect: { "1s": "entravo", "2s": "entravi", "3s": "entrava", "1p": "entravamo", "2p": "entravate", "3p": "entravano" },
             past_perfect: { "1s": "ero entrato", "2s": "eri entrato", "3s": "era entrato", "1p": "eravamo entrati", "2p": "eravate entrati", "3p": "erano entrati" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Il gatto {verb} in casa dalla finestra.", translation: "The cat enters the house through the window." }],
+            future: [{ person: "1s", template: "Domani {verb} in ufficio più tardi.", translation: "Tomorrow I will enter the office later." }],
+            imperfect: [{ person: "3p", template: "Ogni sera {verb} senza fare rumore.", translation: "Every evening they used to enter without making noise." }],
+            past_perfect: [{ person: "2s", template: "Quando ti abbiamo chiamato, tu {verb} già in classe.", translation: "When we called you, you had already entered the classroom." }],
         },
     },
     {
@@ -435,6 +486,12 @@ const italianVerbs: VerbEntry[] = [
             imperfect: { "1s": "partivo", "2s": "partivi", "3s": "partiva", "1p": "partivamo", "2p": "partivate", "3p": "partivano" },
             past_perfect: { "1s": "ero partito", "2s": "eri partito", "3s": "era partito", "1p": "eravamo partiti", "2p": "eravate partiti", "3p": "erano partiti" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "L'aereo {verb} alle sei di mattina.", translation: "The plane leaves at six in the morning." }],
+            future: [{ person: "1p", template: "Domani {verb} per le vacanze.", translation: "Tomorrow we will leave for vacation." }],
+            imperfect: [{ person: "2p", template: "Ogni estate voi {verb} presto la mattina.", translation: "Every summer you (pl.) used to leave early in the morning." }],
+            past_perfect: [{ person: "3p", template: "Quando siamo arrivati, loro {verb} già.", translation: "When we arrived, they had already left." }],
+        },
     },
     {
         infinitive: "tornare",
@@ -444,6 +501,12 @@ const italianVerbs: VerbEntry[] = [
             future: { "1s": "tornerò", "2s": "tornerai", "3s": "tornerà", "1p": "torneremo", "2p": "tornerete", "3p": "torneranno" },
             imperfect: { "1s": "tornavo", "2s": "tornavi", "3s": "tornava", "1p": "tornavamo", "2p": "tornavate", "3p": "tornavano" },
             past_perfect: { "1s": "ero tornato", "2s": "eri tornato", "3s": "era tornato", "1p": "eravamo tornati", "2p": "eravate tornati", "3p": "erano tornati" },
+        },
+        sentences: {
+            present: [{ person: "1s", template: "Io {verb} a casa alle sette ogni sera.", translation: "I return home at seven every evening." }],
+            future: [{ person: "3s", template: "Domani lui {verb} dal viaggio.", translation: "Tomorrow he will return from the trip." }],
+            imperfect: [{ person: "1p", template: "Da bambini {verb} sempre a piedi da scuola.", translation: "As children we always used to return on foot from school." }],
+            past_perfect: [{ person: "3p", template: "Quando li abbiamo cercati, loro {verb} già a casa.", translation: "When we looked for them, they had already returned home." }],
         },
     },
     {
@@ -455,6 +518,12 @@ const italianVerbs: VerbEntry[] = [
             imperfect: { "1s": "cercavo", "2s": "cercavi", "3s": "cercava", "1p": "cercavamo", "2p": "cercavate", "3p": "cercavano" },
             past_perfect: { "1s": "avevo cercato", "2s": "avevi cercato", "3s": "aveva cercato", "1p": "avevamo cercato", "2p": "avevate cercato", "3p": "avevano cercato" },
         },
+        sentences: {
+            present: [{ person: "1s", template: "Io {verb} le chiavi ogni mattina.", translation: "I look for my keys every morning." }],
+            future: [{ person: "3p", template: "Domani {verb} un nuovo appartamento.", translation: "Tomorrow they will look for a new apartment." }],
+            imperfect: [{ person: "2s", template: "Da bambino tu {verb} sempre avventure nuove.", translation: "As a child you always used to look for new adventures." }],
+            past_perfect: [{ person: "1p", template: "Prima di trovarlo, noi {verb} già ovunque.", translation: "Before finding it, we had already looked everywhere." }],
+        },
     },
     {
         infinitive: "trovare",
@@ -464,6 +533,12 @@ const italianVerbs: VerbEntry[] = [
             future: { "1s": "troverò", "2s": "troverai", "3s": "troverà", "1p": "troveremo", "2p": "troverete", "3p": "troveranno" },
             imperfect: { "1s": "trovavo", "2s": "trovavi", "3s": "trovava", "1p": "trovavamo", "2p": "trovavate", "3p": "trovavano" },
             past_perfect: { "1s": "avevo trovato", "2s": "avevi trovato", "3s": "aveva trovato", "1p": "avevamo trovato", "2p": "avevate trovato", "3p": "avevano trovato" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Marco {verb} sempre una soluzione.", translation: "Marco always finds a solution." }],
+            future: [{ person: "1s", template: "Domani {verb} il tempo per chiamarti.", translation: "Tomorrow I will find the time to call you." }],
+            imperfect: [{ person: "3p", template: "Ogni volta {verb} un motivo per litigare.", translation: "Every time they used to find a reason to argue." }],
+            past_perfect: [{ person: "1p", template: "Prima della fine, noi {verb} già la risposta.", translation: "Before the end, we had already found the answer." }],
         },
     },
     {
@@ -475,6 +550,12 @@ const italianVerbs: VerbEntry[] = [
             imperfect: { "1s": "compravo", "2s": "compravi", "3s": "comprava", "1p": "compravamo", "2p": "compravate", "3p": "compravano" },
             past_perfect: { "1s": "avevo comprato", "2s": "avevi comprato", "3s": "aveva comprato", "1p": "avevamo comprato", "2p": "avevate comprato", "3p": "avevano comprato" },
         },
+        sentences: {
+            present: [{ person: "1s", template: "Io {verb} il pane ogni mattina.", translation: "I buy bread every morning." }],
+            future: [{ person: "3s", template: "Domani lei {verb} un nuovo vestito.", translation: "Tomorrow she will buy a new dress." }],
+            imperfect: [{ person: "1p", template: "Da giovani {verb} sempre gli stessi vestiti.", translation: "When we were young we always used to buy the same clothes." }],
+            past_perfect: [{ person: "3p", template: "Quando siamo arrivati al negozio, loro {verb} già tutto.", translation: "When we arrived at the store, they had already bought everything." }],
+        },
     },
     {
         infinitive: "vendere",
@@ -484,6 +565,12 @@ const italianVerbs: VerbEntry[] = [
             future: { "1s": "venderò", "2s": "venderai", "3s": "venderà", "1p": "venderemo", "2p": "venderete", "3p": "venderanno" },
             imperfect: { "1s": "vendevo", "2s": "vendevi", "3s": "vendeva", "1p": "vendevamo", "2p": "vendevate", "3p": "vendevano" },
             past_perfect: { "1s": "avevo venduto", "2s": "avevi venduto", "3s": "aveva venduto", "1p": "avevamo venduto", "2p": "avevate venduto", "3p": "avevano venduto" },
+        },
+        sentences: {
+            present: [{ person: "3p", template: "Loro {verb} frutta al mercato.", translation: "They sell fruit at the market." }],
+            future: [{ person: "1s", template: "Domani {verb} la mia vecchia bicicletta.", translation: "Tomorrow I will sell my old bike." }],
+            imperfect: [{ person: "3s", template: "Il negozio {verb} sempre prodotti freschi.", translation: "The store always used to sell fresh products." }],
+            past_perfect: [{ person: "2p", template: "Quando siamo tornati, voi {verb} già la casa.", translation: "When we came back, you (pl.) had already sold the house." }],
         },
     },
     {
@@ -495,6 +582,12 @@ const italianVerbs: VerbEntry[] = [
             imperfect: { "1s": "aprivo", "2s": "aprivi", "3s": "apriva", "1p": "aprivamo", "2p": "aprivate", "3p": "aprivano" },
             past_perfect: { "1s": "avevo aperto", "2s": "avevi aperto", "3s": "aveva aperto", "1p": "avevamo aperto", "2p": "avevate aperto", "3p": "avevano aperto" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "Il negozio {verb} alle nove ogni giorno.", translation: "The store opens at nine every day." }],
+            future: [{ person: "1s", template: "Domani {verb} un nuovo conto in banca.", translation: "Tomorrow I will open a new bank account." }],
+            imperfect: [{ person: "3p", template: "Ogni mattina {verb} le finestre presto.", translation: "Every morning they used to open the windows early." }],
+            past_perfect: [{ person: "1p", template: "Quando sono arrivati, noi {verb} già la porta.", translation: "When they arrived, we had already opened the door." }],
+        },
     },
     {
         infinitive: "chiudere",
@@ -504,6 +597,12 @@ const italianVerbs: VerbEntry[] = [
             future: { "1s": "chiuderò", "2s": "chiuderai", "3s": "chiuderà", "1p": "chiuderemo", "2p": "chiuderete", "3p": "chiuderanno" },
             imperfect: { "1s": "chiudevo", "2s": "chiudevi", "3s": "chiudeva", "1p": "chiudevamo", "2p": "chiudevate", "3p": "chiudevano" },
             past_perfect: { "1s": "avevo chiuso", "2s": "avevi chiuso", "3s": "aveva chiuso", "1p": "avevamo chiuso", "2p": "avevate chiuso", "3p": "avevano chiuso" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Il museo {verb} alle sei di sera.", translation: "The museum closes at six in the evening." }],
+            future: [{ person: "2p", template: "Domani voi {verb} il negozio prima.", translation: "Tomorrow you (pl.) will close the shop earlier." }],
+            imperfect: [{ person: "1s", template: "Da bambino {verb} sempre la porta con cura.", translation: "As a child I always used to close the door carefully." }],
+            past_perfect: [{ person: "3p", template: "Quando siamo tornati, loro {verb} già le finestre.", translation: "When we came back, they had already closed the windows." }],
         },
     },
     {
@@ -515,6 +614,12 @@ const italianVerbs: VerbEntry[] = [
             imperfect: { "1s": "leggevo", "2s": "leggevi", "3s": "leggeva", "1p": "leggevamo", "2p": "leggevate", "3p": "leggevano" },
             past_perfect: { "1s": "avevo letto", "2s": "avevi letto", "3s": "aveva letto", "1p": "avevamo letto", "2p": "avevate letto", "3p": "avevano letto" },
         },
+        sentences: {
+            present: [{ person: "1s", template: "Io {verb} un libro ogni settimana.", translation: "I read a book every week." }],
+            future: [{ person: "3s", template: "Domani lei {verb} il giornale con calma.", translation: "Tomorrow she will read the newspaper calmly." }],
+            imperfect: [{ person: "1p", template: "Da bambini {verb} sempre prima di dormire.", translation: "As children we always used to read before sleeping." }],
+            past_perfect: [{ person: "3s", template: "Quando è iniziata la lezione, lui {verb} già il capitolo.", translation: "When the class started, he had already read the chapter." }],
+        },
     },
     {
         infinitive: "giocare",
@@ -524,6 +629,12 @@ const italianVerbs: VerbEntry[] = [
             future: { "1s": "giocherò", "2s": "giocherai", "3s": "giocherà", "1p": "giocheremo", "2p": "giocherete", "3p": "giocheranno" },
             imperfect: { "1s": "giocavo", "2s": "giocavi", "3s": "giocava", "1p": "giocavamo", "2p": "giocavate", "3p": "giocavano" },
             past_perfect: { "1s": "avevo giocato", "2s": "avevi giocato", "3s": "aveva giocato", "1p": "avevamo giocato", "2p": "avevate giocato", "3p": "avevano giocato" },
+        },
+        sentences: {
+            present: [{ person: "3p", template: "I bambini {verb} in giardino ogni pomeriggio.", translation: "The children play in the garden every afternoon." }],
+            future: [{ person: "1s", template: "Domani {verb} a calcio con gli amici.", translation: "Tomorrow I will play soccer with friends." }],
+            imperfect: [{ person: "2s", template: "Da piccolo tu {verb} sempre fuori.", translation: "As a child you always used to play outside." }],
+            past_perfect: [{ person: "1p", template: "Quando è iniziata la pioggia, noi {verb} già a lungo.", translation: "When the rain started, we had already been playing for a long time." }],
         },
     },
     {
@@ -535,6 +646,12 @@ const italianVerbs: VerbEntry[] = [
             imperfect: { "1s": "lavoravo", "2s": "lavoravi", "3s": "lavorava", "1p": "lavoravamo", "2p": "lavoravate", "3p": "lavoravano" },
             past_perfect: { "1s": "avevo lavorato", "2s": "avevi lavorato", "3s": "aveva lavorato", "1p": "avevamo lavorato", "2p": "avevate lavorato", "3p": "avevano lavorato" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "Marco {verb} in banca da cinque anni.", translation: "Marco has worked at the bank for five years." }],
+            future: [{ person: "1p", template: "Domani {verb} insieme sul progetto.", translation: "Tomorrow we will work together on the project." }],
+            imperfect: [{ person: "3p", template: "Da giovani {verb} tutta la notte.", translation: "When they were young they used to work all night." }],
+            past_perfect: [{ person: "2s", template: "Quando ti abbiamo chiamato, tu {verb} già molto.", translation: "When we called you, you had already worked a lot." }],
+        },
     },
     {
         infinitive: "studiare",
@@ -544,6 +661,12 @@ const italianVerbs: VerbEntry[] = [
             future: { "1s": "studierò", "2s": "studierai", "3s": "studierà", "1p": "studieremo", "2p": "studierete", "3p": "studieranno" },
             imperfect: { "1s": "studiavo", "2s": "studiavi", "3s": "studiava", "1p": "studiavamo", "2p": "studiavate", "3p": "studiavano" },
             past_perfect: { "1s": "avevo studiato", "2s": "avevi studiato", "3s": "aveva studiato", "1p": "avevamo studiato", "2p": "avevate studiato", "3p": "avevano studiato" },
+        },
+        sentences: {
+            present: [{ person: "1s", template: "Io {verb} l'italiano ogni sera.", translation: "I study Italian every evening." }],
+            future: [{ person: "3s", template: "Domani lei {verb} per l'esame.", translation: "Tomorrow she will study for the exam." }],
+            imperfect: [{ person: "1p", template: "Da studenti {verb} sempre in biblioteca.", translation: "As students we always used to study in the library." }],
+            past_perfect: [{ person: "3p", template: "Quando è iniziato l'esame, loro {verb} già abbastanza.", translation: "When the exam started, they had already studied enough." }],
         },
     },
     {
@@ -555,6 +678,12 @@ const italianVerbs: VerbEntry[] = [
             imperfect: { "1s": "imparavo", "2s": "imparavi", "3s": "imparava", "1p": "imparavamo", "2p": "imparavate", "3p": "imparavano" },
             past_perfect: { "1s": "avevo imparato", "2s": "avevi imparato", "3s": "aveva imparato", "1p": "avevamo imparato", "2p": "avevate imparato", "3p": "avevano imparato" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "Marco {verb} una nuova lingua ogni anno.", translation: "Marco learns a new language every year." }],
+            future: [{ person: "1p", template: "Domani {verb} a suonare la chitarra.", translation: "Tomorrow we will learn to play the guitar." }],
+            imperfect: [{ person: "2s", template: "Da bambino {verb} sempre in fretta.", translation: "As a child you always used to learn quickly." }],
+            past_perfect: [{ person: "1s", template: "Quando è iniziato il corso, io {verb} già le basi.", translation: "When the course started, I had already learned the basics." }],
+        },
     },
     {
         infinitive: "capire",
@@ -564,6 +693,12 @@ const italianVerbs: VerbEntry[] = [
             future: { "1s": "capirò", "2s": "capirai", "3s": "capirà", "1p": "capiremo", "2p": "capirete", "3p": "capiranno" },
             imperfect: { "1s": "capivo", "2s": "capivi", "3s": "capiva", "1p": "capivamo", "2p": "capivate", "3p": "capivano" },
             past_perfect: { "1s": "avevo capito", "2s": "avevi capito", "3s": "aveva capito", "1p": "avevamo capito", "2p": "avevate capito", "3p": "avevano capito" },
+        },
+        sentences: {
+            present: [{ person: "1s", template: "Io {verb} il problema adesso.", translation: "I understand the problem now." }],
+            future: [{ person: "3p", template: "Domani {verb} la verità.", translation: "Tomorrow they will understand the truth." }],
+            imperfect: [{ person: "2p", template: "Da bambini voi non {verb} sempre le regole.", translation: "As children you (pl.) didn't always understand the rules." }],
+            past_perfect: [{ person: "3s", template: "Quando gliel'ho spiegato, lui {verb} già tutto.", translation: "When I explained it to him, he had already understood everything." }],
         },
     },
     {
@@ -575,6 +710,12 @@ const italianVerbs: VerbEntry[] = [
             imperfect: { "1s": "pensavo", "2s": "pensavi", "3s": "pensava", "1p": "pensavamo", "2p": "pensavate", "3p": "pensavano" },
             past_perfect: { "1s": "avevo pensato", "2s": "avevi pensato", "3s": "aveva pensato", "1p": "avevamo pensato", "2p": "avevate pensato", "3p": "avevano pensato" },
         },
+        sentences: {
+            present: [{ person: "1s", template: "Io {verb} spesso a quel giorno.", translation: "I often think about that day." }],
+            future: [{ person: "3s", template: "Domani lei {verb} a una soluzione.", translation: "Tomorrow she will think of a solution." }],
+            imperfect: [{ person: "1p", template: "Da giovani {verb} sempre al futuro.", translation: "When we were young we always used to think about the future." }],
+            past_perfect: [{ person: "3p", template: "Prima della riunione, loro {verb} già alla proposta.", translation: "Before the meeting, they had already thought about the proposal." }],
+        },
     },
     {
         infinitive: "chiedere",
@@ -584,6 +725,12 @@ const italianVerbs: VerbEntry[] = [
             future: { "1s": "chiederò", "2s": "chiederai", "3s": "chiederà", "1p": "chiederemo", "2p": "chiederete", "3p": "chiederanno" },
             imperfect: { "1s": "chiedevo", "2s": "chiedevi", "3s": "chiedeva", "1p": "chiedevamo", "2p": "chiedevate", "3p": "chiedevano" },
             past_perfect: { "1s": "avevo chiesto", "2s": "avevi chiesto", "3s": "aveva chiesto", "1p": "avevamo chiesto", "2p": "avevate chiesto", "3p": "avevano chiesto" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Marco {verb} sempre il permesso.", translation: "Marco always asks permission." }],
+            future: [{ person: "1s", template: "Domani {verb} qualcosa al professore.", translation: "Tomorrow I will ask the teacher something." }],
+            imperfect: [{ person: "2p", template: "Da bambini voi {verb} sempre troppe cose.", translation: "As children you (pl.) always used to ask too many things." }],
+            past_perfect: [{ person: "3p", template: "Prima della fine, loro {verb} già molte cose.", translation: "Before the end, they had already asked many things." }],
         },
     },
     {
@@ -595,6 +742,12 @@ const italianVerbs: VerbEntry[] = [
             imperfect: { "1s": "rispondevo", "2s": "rispondevi", "3s": "rispondeva", "1p": "rispondevamo", "2p": "rispondevate", "3p": "rispondevano" },
             past_perfect: { "1s": "avevo risposto", "2s": "avevi risposto", "3s": "aveva risposto", "1p": "avevamo risposto", "2p": "avevate risposto", "3p": "avevano risposto" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "Maria {verb} sempre educatamente.", translation: "Maria always answers politely." }],
+            future: [{ person: "1p", template: "Domani {verb} a tutte le domande.", translation: "Tomorrow we will answer all the questions." }],
+            imperfect: [{ person: "3p", template: "Da bambini {verb} sempre con calma.", translation: "As children they always used to answer calmly." }],
+            past_perfect: [{ person: "2s", template: "Quando ti ho scritto, tu {verb} già alla lettera.", translation: "When I wrote to you, you had already answered the letter." }],
+        },
     },
     {
         infinitive: "chiamare",
@@ -604,6 +757,12 @@ const italianVerbs: VerbEntry[] = [
             future: { "1s": "chiamerò", "2s": "chiamerai", "3s": "chiamerà", "1p": "chiameremo", "2p": "chiamerete", "3p": "chiameranno" },
             imperfect: { "1s": "chiamavo", "2s": "chiamavi", "3s": "chiamava", "1p": "chiamavamo", "2p": "chiamavate", "3p": "chiamavano" },
             past_perfect: { "1s": "avevo chiamato", "2s": "avevi chiamato", "3s": "aveva chiamato", "1p": "avevamo chiamato", "2p": "avevate chiamato", "3p": "avevano chiamato" },
+        },
+        sentences: {
+            present: [{ person: "1s", template: "Io {verb} mia madre ogni domenica.", translation: "I call my mother every Sunday." }],
+            future: [{ person: "3s", template: "Domani lui {verb} il dottore.", translation: "Tomorrow he will call the doctor." }],
+            imperfect: [{ person: "1p", template: "Da bambini {verb} sempre i nonni la domenica.", translation: "As children we always used to call our grandparents on Sundays." }],
+            past_perfect: [{ person: "3p", template: "Prima della cena, loro {verb} già tutti gli invitati.", translation: "Before dinner, they had already called all the guests." }],
         },
     },
     {
@@ -615,6 +774,12 @@ const italianVerbs: VerbEntry[] = [
             imperfect: { "1s": "camminavo", "2s": "camminavi", "3s": "camminava", "1p": "camminavamo", "2p": "camminavate", "3p": "camminavano" },
             past_perfect: { "1s": "avevo camminato", "2s": "avevi camminato", "3s": "aveva camminato", "1p": "avevamo camminato", "2p": "avevate camminato", "3p": "avevano camminato" },
         },
+        sentences: {
+            present: [{ person: "3p", template: "I turisti {verb} per la città tutto il giorno.", translation: "The tourists walk around the city all day." }],
+            future: [{ person: "1s", template: "Domani {verb} lungo la spiaggia.", translation: "Tomorrow I will walk along the beach." }],
+            imperfect: [{ person: "2s", template: "Da bambino tu {verb} sempre scalzo.", translation: "As a child you always used to walk barefoot." }],
+            past_perfect: [{ person: "1p", template: "Prima di fermarci, noi {verb} già per ore.", translation: "Before stopping, we had already been walking for hours." }],
+        },
     },
     {
         infinitive: "correre",
@@ -624,6 +789,12 @@ const italianVerbs: VerbEntry[] = [
             future: { "1s": "correrò", "2s": "correrai", "3s": "correrà", "1p": "correremo", "2p": "correrete", "3p": "correranno" },
             imperfect: { "1s": "correvo", "2s": "correvi", "3s": "correva", "1p": "correvamo", "2p": "correvate", "3p": "correvano" },
             past_perfect: { "1s": "avevo corso", "2s": "avevi corso", "3s": "aveva corso", "1p": "avevamo corso", "2p": "avevate corso", "3p": "avevano corso" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Marco {verb} nel parco ogni mattina.", translation: "Marco runs in the park every morning." }],
+            future: [{ person: "2p", template: "Domani voi {verb} la maratona.", translation: "Tomorrow you (pl.) will run the marathon." }],
+            imperfect: [{ person: "3s", template: "Da giovane {verb} per ore senza fermarsi.", translation: "As a young man he used to run for hours without stopping." }],
+            past_perfect: [{ person: "1s", template: "Quando sono arrivato, io {verb} già cinque chilometri.", translation: "When I arrived, I had already run five kilometers." }],
         },
     },
     {
@@ -635,6 +806,12 @@ const italianVerbs: VerbEntry[] = [
             imperfect: { "1s": "viaggiavo", "2s": "viaggiavi", "3s": "viaggiava", "1p": "viaggiavamo", "2p": "viaggiavate", "3p": "viaggiavano" },
             past_perfect: { "1s": "avevo viaggiato", "2s": "avevi viaggiato", "3s": "aveva viaggiato", "1p": "avevamo viaggiato", "2p": "avevate viaggiato", "3p": "avevano viaggiato" },
         },
+        sentences: {
+            present: [{ person: "1p", template: "Noi {verb} in Europa ogni estate.", translation: "We travel around Europe every summer." }],
+            future: [{ person: "3s", template: "L'anno prossimo lei {verb} in Asia.", translation: "Next year she will travel to Asia." }],
+            imperfect: [{ person: "3p", template: "Da giovani {verb} spesso da soli.", translation: "When they were young they often used to travel alone." }],
+            past_perfect: [{ person: "2s", template: "Prima di stabilirti qui, tu {verb} già molto.", translation: "Before settling here, you had already traveled a lot." }],
+        },
     },
     {
         infinitive: "cantare",
@@ -644,6 +821,12 @@ const italianVerbs: VerbEntry[] = [
             future: { "1s": "canterò", "2s": "canterai", "3s": "canterà", "1p": "canteremo", "2p": "canterete", "3p": "canteranno" },
             imperfect: { "1s": "cantavo", "2s": "cantavi", "3s": "cantava", "1p": "cantavamo", "2p": "cantavate", "3p": "cantavano" },
             past_perfect: { "1s": "avevo cantato", "2s": "avevi cantato", "3s": "aveva cantato", "1p": "avevamo cantato", "2p": "avevate cantato", "3p": "avevano cantato" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Maria {verb} ogni mattina sotto la doccia.", translation: "Maria sings every morning in the shower." }],
+            future: [{ person: "1s", template: "Domani {verb} al concerto della scuola.", translation: "Tomorrow I will sing at the school concert." }],
+            imperfect: [{ person: "1p", template: "Da bambini {verb} sempre in coro.", translation: "As children we always used to sing in the choir." }],
+            past_perfect: [{ person: "3p", template: "Prima della fine dello spettacolo, loro {verb} già tre canzoni.", translation: "Before the end of the show, they had already sung three songs." }],
         },
     },
     {
@@ -655,6 +838,12 @@ const italianVerbs: VerbEntry[] = [
             imperfect: { "1s": "aiutavo", "2s": "aiutavi", "3s": "aiutava", "1p": "aiutavamo", "2p": "aiutavate", "3p": "aiutavano" },
             past_perfect: { "1s": "avevo aiutato", "2s": "avevi aiutato", "3s": "aveva aiutato", "1p": "avevamo aiutato", "2p": "avevate aiutato", "3p": "avevano aiutato" },
         },
+        sentences: {
+            present: [{ person: "1s", template: "Io {verb} mio fratello con i compiti.", translation: "I help my brother with homework." }],
+            future: [{ person: "3s", template: "Domani lei {verb} i nuovi studenti.", translation: "Tomorrow she will help the new students." }],
+            imperfect: [{ person: "2p", template: "Da giovani voi {verb} sempre i vicini.", translation: "When you (pl.) were young you always used to help the neighbors." }],
+            past_perfect: [{ person: "1p", template: "Prima della gara, noi {verb} già molti atleti.", translation: "Before the race, we had already helped many athletes." }],
+        },
     },
     {
         infinitive: "amare",
@@ -664,6 +853,12 @@ const italianVerbs: VerbEntry[] = [
             future: { "1s": "amerò", "2s": "amerai", "3s": "amerà", "1p": "ameremo", "2p": "amerete", "3p": "ameranno" },
             imperfect: { "1s": "amavo", "2s": "amavi", "3s": "amava", "1p": "amavamo", "2p": "amavate", "3p": "amavano" },
             past_perfect: { "1s": "avevo amato", "2s": "avevi amato", "3s": "aveva amato", "1p": "avevamo amato", "2p": "avevate amato", "3p": "avevano amato" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Marco {verb} la sua famiglia sopra ogni cosa.", translation: "Marco loves his family above all else." }],
+            future: [{ person: "1s", template: "Per sempre {verb} questa città.", translation: "I will love this city forever." }],
+            imperfect: [{ person: "3p", template: "Da giovani {verb} molto la loro terra natale.", translation: "When they were young they loved their homeland very much." }],
+            past_perfect: [{ person: "1p", template: "Prima di conoscerlo, noi {verb} già quel posto.", translation: "Before knowing him, we had already loved that place." }],
         },
     },
     {
@@ -675,6 +870,12 @@ const italianVerbs: VerbEntry[] = [
             imperfect: { "1s": "dimenticavo", "2s": "dimenticavi", "3s": "dimenticava", "1p": "dimenticavamo", "2p": "dimenticavate", "3p": "dimenticavano" },
             past_perfect: { "1s": "avevo dimenticato", "2s": "avevi dimenticato", "3s": "aveva dimenticato", "1p": "avevamo dimenticato", "2p": "avevate dimenticato", "3p": "avevano dimenticato" },
         },
+        sentences: {
+            present: [{ person: "1s", template: "Io {verb} spesso le chiavi di casa.", translation: "I often forget my house keys." }],
+            future: [{ person: "3s", template: "Non {verb} mai quel giorno.", translation: "He will never forget that day." }],
+            imperfect: [{ person: "2p", template: "Da bambini voi {verb} sempre i compiti.", translation: "As children you (pl.) always used to forget your homework." }],
+            past_perfect: [{ person: "3p", template: "Prima della fine del viaggio, loro {verb} già il problema.", translation: "Before the end of the trip, they had already forgotten the problem." }],
+        },
     },
     {
         infinitive: "cominciare",
@@ -684,6 +885,12 @@ const italianVerbs: VerbEntry[] = [
             future: { "1s": "comincerò", "2s": "comincerai", "3s": "comincerà", "1p": "cominceremo", "2p": "comincerete", "3p": "cominceranno" },
             imperfect: { "1s": "cominciavo", "2s": "cominciavi", "3s": "cominciava", "1p": "cominciavamo", "2p": "cominciavate", "3p": "cominciavano" },
             past_perfect: { "1s": "avevo cominciato", "2s": "avevi cominciato", "3s": "aveva cominciato", "1p": "avevamo cominciato", "2p": "avevate cominciato", "3p": "avevano cominciato" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Il film {verb} alle nove di sera.", translation: "The movie begins at nine in the evening." }],
+            future: [{ person: "1p", template: "Domani {verb} un nuovo progetto.", translation: "Tomorrow we will begin a new project." }],
+            imperfect: [{ person: "3p", template: "Ogni giorno {verb} a lavorare presto.", translation: "Every day they used to begin working early." }],
+            past_perfect: [{ person: "1s", template: "Quando sono arrivato, io {verb} già il lavoro.", translation: "When I arrived, I had already begun the work." }],
         },
     },
 ];
@@ -929,9 +1136,6 @@ const frenchVerbs: VerbEntry[] = [
             past_perfect: [{ person: "3p", template: "Ils {verb} déjà longtemps quand elle est arrivée.", translation: "They had already been waiting a long time when she arrived." }],
         },
     },
-    // The verbs below have conjugation tables only (no curated example
-    // sentences); the practice engine falls back to a simple generated
-    // sentence for these via fallbackTemplate().
     {
         infinitive: "croire",
         english: "to believe",
@@ -940,6 +1144,12 @@ const frenchVerbs: VerbEntry[] = [
             future: { "1s": "croirai", "2s": "croiras", "3s": "croira", "1p": "croirons", "2p": "croirez", "3p": "croiront" },
             imperfect: { "1s": "croyais", "2s": "croyais", "3s": "croyait", "1p": "croyions", "2p": "croyiez", "3p": "croyaient" },
             past_perfect: { "1s": "avais cru", "2s": "avais cru", "3s": "avait cru", "1p": "avions cru", "2p": "aviez cru", "3p": "avaient cru" },
+        },
+        sentences: {
+            present: [{ person: "1s", template: "Je {verb} en ce projet.", translation: "I believe in this project." }],
+            future: [{ person: "3s", template: "À la fin elle {verb} à notre idée.", translation: "In the end she will believe our idea." }],
+            imperfect: [{ person: "3p", template: "Ils {verb} en un avenir meilleur.", translation: "They used to believe in a better future." }],
+            past_perfect: [{ person: "1p", template: "Nous {verb} déjà à cette histoire.", translation: "We had already believed that story." }],
         },
     },
     {
@@ -951,6 +1161,12 @@ const frenchVerbs: VerbEntry[] = [
             imperfect: { "1s": "dormais", "2s": "dormais", "3s": "dormait", "1p": "dormions", "2p": "dormiez", "3p": "dormaient" },
             past_perfect: { "1s": "avais dormi", "2s": "avais dormi", "3s": "avait dormi", "1p": "avions dormi", "2p": "aviez dormi", "3p": "avaient dormi" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "L'enfant {verb} toute la nuit.", translation: "The child sleeps all night." }],
+            future: [{ person: "1s", template: "Ce soir je {verb} tôt.", translation: "Tonight I will sleep early." }],
+            imperfect: [{ person: "2p", template: "Vous {verb} toujours jusqu'à tard.", translation: "You (pl.) always used to sleep late." }],
+            past_perfect: [{ person: "3p", template: "Ils {verb} déjà quand nous sommes arrivés.", translation: "They had already been sleeping when we arrived." }],
+        },
     },
     {
         infinitive: "écrire",
@@ -960,6 +1176,12 @@ const frenchVerbs: VerbEntry[] = [
             future: { "1s": "écrirai", "2s": "écriras", "3s": "écrira", "1p": "écrirons", "2p": "écrirez", "3p": "écriront" },
             imperfect: { "1s": "écrivais", "2s": "écrivais", "3s": "écrivait", "1p": "écrivions", "2p": "écriviez", "3p": "écrivaient" },
             past_perfect: { "1s": "avais écrit", "2s": "avais écrit", "3s": "avait écrit", "1p": "avions écrit", "2p": "aviez écrit", "3p": "avaient écrit" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Marie {verb} une lettre chaque semaine.", translation: "Marie writes a letter every week." }],
+            future: [{ person: "1p", template: "Demain nous {verb} le rapport.", translation: "Tomorrow we will write the report." }],
+            imperfect: [{ person: "1s", template: "Étudiant, j'{verb} des poèmes.", translation: "As a student I used to write poems." }],
+            past_perfect: [{ person: "3p", template: "Ils {verb} déjà le message avant de partir.", translation: "They had already written the message before leaving." }],
         },
     },
     {
@@ -971,6 +1193,12 @@ const frenchVerbs: VerbEntry[] = [
             imperfect: { "1s": "vivais", "2s": "vivais", "3s": "vivait", "1p": "vivions", "2p": "viviez", "3p": "vivaient" },
             past_perfect: { "1s": "avais vécu", "2s": "avais vécu", "3s": "avait vécu", "1p": "avions vécu", "2p": "aviez vécu", "3p": "avaient vécu" },
         },
+        sentences: {
+            present: [{ person: "1p", template: "Nous {verb} près de la mer.", translation: "We live near the sea." }],
+            future: [{ person: "3s", template: "Un jour il {verb} à l'étranger.", translation: "Someday he will live abroad." }],
+            imperfect: [{ person: "2p", template: "Vous {verb} toujours à la campagne.", translation: "You (pl.) always used to live in the countryside." }],
+            past_perfect: [{ person: "3p", template: "Ils {verb} déjà là avant de déménager.", translation: "They had already lived there before moving." }],
+        },
     },
     {
         infinitive: "aller",
@@ -980,6 +1208,12 @@ const frenchVerbs: VerbEntry[] = [
             future: { "1s": "irai", "2s": "iras", "3s": "ira", "1p": "irons", "2p": "irez", "3p": "iront" },
             imperfect: { "1s": "allais", "2s": "allais", "3s": "allait", "1p": "allions", "2p": "alliez", "3p": "allaient" },
             past_perfect: { "1s": "étais allé", "2s": "étais allé", "3s": "était allé", "1p": "étions allés", "2p": "étiez allés", "3p": "étaient allés" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Marie {verb} au marché chaque samedi.", translation: "Marie goes to the market every Saturday." }],
+            future: [{ person: "1s", template: "Demain j'{verb} à Rome pour le travail.", translation: "Tomorrow I will go to Rome for work." }],
+            imperfect: [{ person: "3p", template: "Enfants, ils {verb} toujours au parc.", translation: "As children they always used to go to the park." }],
+            past_perfect: [{ person: "1p", template: "Quand elle est arrivée, nous {verb} déjà à la maison.", translation: "When she arrived, we had already gone home." }],
         },
     },
     {
@@ -991,6 +1225,12 @@ const frenchVerbs: VerbEntry[] = [
             imperfect: { "1s": "venais", "2s": "venais", "3s": "venait", "1p": "venions", "2p": "veniez", "3p": "venaient" },
             past_perfect: { "1s": "étais venu", "2s": "étais venu", "3s": "était venu", "1p": "étions venus", "2p": "étiez venus", "3p": "étaient venus" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "Marc {verb} nous voir chaque dimanche.", translation: "Marco comes to see us every Sunday." }],
+            future: [{ person: "2s", template: "Demain tu {verb} à la fête ?", translation: "Will you come to the party tomorrow?" }],
+            imperfect: [{ person: "1p", template: "Jeunes, nous {verb} souvent dans cette ville.", translation: "When we were young we often used to come to this city." }],
+            past_perfect: [{ person: "3s", template: "Quand nous l'avons appelé, il {verb} déjà à la réunion.", translation: "When we called him, he had already come to the meeting." }],
+        },
     },
     {
         infinitive: "donner",
@@ -1000,6 +1240,12 @@ const frenchVerbs: VerbEntry[] = [
             future: { "1s": "donnerai", "2s": "donneras", "3s": "donnera", "1p": "donnerons", "2p": "donnerez", "3p": "donneront" },
             imperfect: { "1s": "donnais", "2s": "donnais", "3s": "donnait", "1p": "donnions", "2p": "donniez", "3p": "donnaient" },
             past_perfect: { "1s": "avais donné", "2s": "avais donné", "3s": "avait donné", "1p": "avions donné", "2p": "aviez donné", "3p": "avaient donné" },
+        },
+        sentences: {
+            present: [{ person: "1s", template: "Je {verb} un cadeau à ma mère chaque année.", translation: "I give a gift to my mother every year." }],
+            future: [{ person: "3p", template: "Demain ils {verb} une réponse au directeur.", translation: "Tomorrow they will give an answer to the director." }],
+            imperfect: [{ person: "2s", template: "Enfant, tu {verb} toujours tes jouets à tes amis.", translation: "As a child you always used to give your toys to your friends." }],
+            past_perfect: [{ person: "1p", template: "Quand il est arrivé, nous {verb} déjà les billets.", translation: "When he arrived, we had already given the tickets." }],
         },
     },
     {
@@ -1011,6 +1257,12 @@ const frenchVerbs: VerbEntry[] = [
             imperfect: { "1s": "arrivais", "2s": "arrivais", "3s": "arrivait", "1p": "arrivions", "2p": "arriviez", "3p": "arrivaient" },
             past_perfect: { "1s": "étais arrivé", "2s": "étais arrivé", "3s": "était arrivé", "1p": "étions arrivés", "2p": "étiez arrivés", "3p": "étaient arrivés" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "Le train {verb} à huit heures chaque matin.", translation: "The train arrives at eight every morning." }],
+            future: [{ person: "2p", template: "Demain vous {verb} avant nous.", translation: "Tomorrow you (pl.) will arrive before us." }],
+            imperfect: [{ person: "3p", template: "Chaque été ils {verb} en retard.", translation: "Every summer they used to arrive late." }],
+            past_perfect: [{ person: "3s", template: "Quand nous avons téléphoné, elle {verb} déjà au bureau.", translation: "When we called, she had already arrived at the office." }],
+        },
     },
     {
         infinitive: "entrer",
@@ -1020,6 +1272,12 @@ const frenchVerbs: VerbEntry[] = [
             future: { "1s": "entrerai", "2s": "entreras", "3s": "entrera", "1p": "entrerons", "2p": "entrerez", "3p": "entreront" },
             imperfect: { "1s": "entrais", "2s": "entrais", "3s": "entrait", "1p": "entrions", "2p": "entriez", "3p": "entraient" },
             past_perfect: { "1s": "étais entré", "2s": "étais entré", "3s": "était entré", "1p": "étions entrés", "2p": "étiez entrés", "3p": "étaient entrés" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Le chat {verb} dans la maison par la fenêtre.", translation: "The cat enters the house through the window." }],
+            future: [{ person: "1s", template: "Demain j'{verb} au bureau plus tard.", translation: "Tomorrow I will enter the office later." }],
+            imperfect: [{ person: "3p", template: "Chaque soir ils {verb} sans faire de bruit.", translation: "Every evening they used to enter without making noise." }],
+            past_perfect: [{ person: "2s", template: "Quand nous t'avons appelé, tu {verb} déjà en classe.", translation: "When we called you, you had already entered the classroom." }],
         },
     },
     {
@@ -1031,6 +1289,12 @@ const frenchVerbs: VerbEntry[] = [
             imperfect: { "1s": "partais", "2s": "partais", "3s": "partait", "1p": "partions", "2p": "partiez", "3p": "partaient" },
             past_perfect: { "1s": "étais parti", "2s": "étais parti", "3s": "était parti", "1p": "étions partis", "2p": "étiez partis", "3p": "étaient partis" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "L'avion {verb} à six heures du matin.", translation: "The plane leaves at six in the morning." }],
+            future: [{ person: "1p", template: "Demain nous {verb} en vacances.", translation: "Tomorrow we will leave for vacation." }],
+            imperfect: [{ person: "2p", template: "Chaque été vous {verb} tôt le matin.", translation: "Every summer you (pl.) used to leave early in the morning." }],
+            past_perfect: [{ person: "3p", template: "Quand nous sommes arrivés, ils {verb} déjà.", translation: "When we arrived, they had already left." }],
+        },
     },
     {
         infinitive: "retourner",
@@ -1040,6 +1304,12 @@ const frenchVerbs: VerbEntry[] = [
             future: { "1s": "retournerai", "2s": "retourneras", "3s": "retournera", "1p": "retournerons", "2p": "retournerez", "3p": "retourneront" },
             imperfect: { "1s": "retournais", "2s": "retournais", "3s": "retournait", "1p": "retournions", "2p": "retourniez", "3p": "retournaient" },
             past_perfect: { "1s": "étais retourné", "2s": "étais retourné", "3s": "était retourné", "1p": "étions retournés", "2p": "étiez retournés", "3p": "étaient retournés" },
+        },
+        sentences: {
+            present: [{ person: "1s", template: "Je {verb} à la maison à sept heures chaque soir.", translation: "I return home at seven every evening." }],
+            future: [{ person: "3s", template: "Demain il {verb} de voyage.", translation: "Tomorrow he will return from the trip." }],
+            imperfect: [{ person: "1p", template: "Enfants, nous {verb} toujours à pied de l'école.", translation: "As children we always used to return on foot from school." }],
+            past_perfect: [{ person: "3p", template: "Quand nous les avons cherchés, ils {verb} déjà à la maison.", translation: "When we looked for them, they had already returned home." }],
         },
     },
     {
@@ -1051,6 +1321,12 @@ const frenchVerbs: VerbEntry[] = [
             imperfect: { "1s": "cherchais", "2s": "cherchais", "3s": "cherchait", "1p": "cherchions", "2p": "cherchiez", "3p": "cherchaient" },
             past_perfect: { "1s": "avais cherché", "2s": "avais cherché", "3s": "avait cherché", "1p": "avions cherché", "2p": "aviez cherché", "3p": "avaient cherché" },
         },
+        sentences: {
+            present: [{ person: "1s", template: "Je {verb} les clés chaque matin.", translation: "I look for my keys every morning." }],
+            future: [{ person: "3p", template: "Demain ils {verb} un nouvel appartement.", translation: "Tomorrow they will look for a new apartment." }],
+            imperfect: [{ person: "2s", template: "Enfant, tu {verb} toujours de nouvelles aventures.", translation: "As a child you always used to look for new adventures." }],
+            past_perfect: [{ person: "1p", template: "Avant de le trouver, nous {verb} déjà partout.", translation: "Before finding it, we had already looked everywhere." }],
+        },
     },
     {
         infinitive: "trouver",
@@ -1060,6 +1336,12 @@ const frenchVerbs: VerbEntry[] = [
             future: { "1s": "trouverai", "2s": "trouveras", "3s": "trouvera", "1p": "trouverons", "2p": "trouverez", "3p": "trouveront" },
             imperfect: { "1s": "trouvais", "2s": "trouvais", "3s": "trouvait", "1p": "trouvions", "2p": "trouviez", "3p": "trouvaient" },
             past_perfect: { "1s": "avais trouvé", "2s": "avais trouvé", "3s": "avait trouvé", "1p": "avions trouvé", "2p": "aviez trouvé", "3p": "avaient trouvé" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Marc {verb} toujours une solution.", translation: "Marco always finds a solution." }],
+            future: [{ person: "1s", template: "Demain je {verb} le temps de t'appeler.", translation: "Tomorrow I will find the time to call you." }],
+            imperfect: [{ person: "3p", template: "Chaque fois ils {verb} une raison de se disputer.", translation: "Every time they used to find a reason to argue." }],
+            past_perfect: [{ person: "1p", template: "Avant la fin, nous {verb} déjà la réponse.", translation: "Before the end, we had already found the answer." }],
         },
     },
     {
@@ -1071,6 +1353,12 @@ const frenchVerbs: VerbEntry[] = [
             imperfect: { "1s": "achetais", "2s": "achetais", "3s": "achetait", "1p": "achetions", "2p": "achetiez", "3p": "achetaient" },
             past_perfect: { "1s": "avais acheté", "2s": "avais acheté", "3s": "avait acheté", "1p": "avions acheté", "2p": "aviez acheté", "3p": "avaient acheté" },
         },
+        sentences: {
+            present: [{ person: "1s", template: "J'{verb} le pain chaque matin.", translation: "I buy bread every morning." }],
+            future: [{ person: "3s", template: "Demain elle {verb} une nouvelle robe.", translation: "Tomorrow she will buy a new dress." }],
+            imperfect: [{ person: "1p", template: "Jeunes, nous {verb} toujours les mêmes vêtements.", translation: "When we were young we always used to buy the same clothes." }],
+            past_perfect: [{ person: "3p", template: "Quand nous sommes arrivés au magasin, ils {verb} déjà tout.", translation: "When we arrived at the store, they had already bought everything." }],
+        },
     },
     {
         infinitive: "vendre",
@@ -1080,6 +1368,12 @@ const frenchVerbs: VerbEntry[] = [
             future: { "1s": "vendrai", "2s": "vendras", "3s": "vendra", "1p": "vendrons", "2p": "vendrez", "3p": "vendront" },
             imperfect: { "1s": "vendais", "2s": "vendais", "3s": "vendait", "1p": "vendions", "2p": "vendiez", "3p": "vendaient" },
             past_perfect: { "1s": "avais vendu", "2s": "avais vendu", "3s": "avait vendu", "1p": "avions vendu", "2p": "aviez vendu", "3p": "avaient vendu" },
+        },
+        sentences: {
+            present: [{ person: "3p", template: "Ils {verb} des fruits au marché.", translation: "They sell fruit at the market." }],
+            future: [{ person: "1s", template: "Demain je {verb} mon vieux vélo.", translation: "Tomorrow I will sell my old bike." }],
+            imperfect: [{ person: "3s", template: "Le magasin {verb} toujours des produits frais.", translation: "The store always used to sell fresh products." }],
+            past_perfect: [{ person: "2p", template: "Quand nous sommes revenus, vous {verb} déjà la maison.", translation: "When we came back, you (pl.) had already sold the house." }],
         },
     },
     {
@@ -1091,6 +1385,12 @@ const frenchVerbs: VerbEntry[] = [
             imperfect: { "1s": "ouvrais", "2s": "ouvrais", "3s": "ouvrait", "1p": "ouvrions", "2p": "ouvriez", "3p": "ouvraient" },
             past_perfect: { "1s": "avais ouvert", "2s": "avais ouvert", "3s": "avait ouvert", "1p": "avions ouvert", "2p": "aviez ouvert", "3p": "avaient ouvert" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "Le magasin {verb} à neuf heures chaque jour.", translation: "The store opens at nine every day." }],
+            future: [{ person: "1s", template: "Demain j'{verb} un nouveau compte en banque.", translation: "Tomorrow I will open a new bank account." }],
+            imperfect: [{ person: "3p", template: "Chaque matin ils {verb} les fenêtres tôt.", translation: "Every morning they used to open the windows early." }],
+            past_perfect: [{ person: "1p", template: "Quand ils sont arrivés, nous {verb} déjà la porte.", translation: "When they arrived, we had already opened the door." }],
+        },
     },
     {
         infinitive: "fermer",
@@ -1100,6 +1400,12 @@ const frenchVerbs: VerbEntry[] = [
             future: { "1s": "fermerai", "2s": "fermeras", "3s": "fermera", "1p": "fermerons", "2p": "fermerez", "3p": "fermeront" },
             imperfect: { "1s": "fermais", "2s": "fermais", "3s": "fermait", "1p": "fermions", "2p": "fermiez", "3p": "fermaient" },
             past_perfect: { "1s": "avais fermé", "2s": "avais fermé", "3s": "avait fermé", "1p": "avions fermé", "2p": "aviez fermé", "3p": "avaient fermé" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Le musée {verb} à six heures du soir.", translation: "The museum closes at six in the evening." }],
+            future: [{ person: "2p", template: "Demain vous {verb} le magasin plus tôt.", translation: "Tomorrow you (pl.) will close the shop earlier." }],
+            imperfect: [{ person: "1s", template: "Enfant, je {verb} toujours la porte avec soin.", translation: "As a child I always used to close the door carefully." }],
+            past_perfect: [{ person: "3p", template: "Quand nous sommes revenus, ils {verb} déjà les fenêtres.", translation: "When we came back, they had already closed the windows." }],
         },
     },
     {
@@ -1111,6 +1417,12 @@ const frenchVerbs: VerbEntry[] = [
             imperfect: { "1s": "lisais", "2s": "lisais", "3s": "lisait", "1p": "lisions", "2p": "lisiez", "3p": "lisaient" },
             past_perfect: { "1s": "avais lu", "2s": "avais lu", "3s": "avait lu", "1p": "avions lu", "2p": "aviez lu", "3p": "avaient lu" },
         },
+        sentences: {
+            present: [{ person: "1s", template: "Je {verb} un livre chaque semaine.", translation: "I read a book every week." }],
+            future: [{ person: "3s", template: "Demain elle {verb} le journal tranquillement.", translation: "Tomorrow she will read the newspaper calmly." }],
+            imperfect: [{ person: "1p", template: "Enfants, nous {verb} toujours avant de dormir.", translation: "As children we always used to read before sleeping." }],
+            past_perfect: [{ person: "3s", template: "Quand le cours a commencé, il {verb} déjà le chapitre.", translation: "When the class started, he had already read the chapter." }],
+        },
     },
     {
         infinitive: "jouer",
@@ -1120,6 +1432,12 @@ const frenchVerbs: VerbEntry[] = [
             future: { "1s": "jouerai", "2s": "joueras", "3s": "jouera", "1p": "jouerons", "2p": "jouerez", "3p": "joueront" },
             imperfect: { "1s": "jouais", "2s": "jouais", "3s": "jouait", "1p": "jouions", "2p": "jouiez", "3p": "jouaient" },
             past_perfect: { "1s": "avais joué", "2s": "avais joué", "3s": "avait joué", "1p": "avions joué", "2p": "aviez joué", "3p": "avaient joué" },
+        },
+        sentences: {
+            present: [{ person: "3p", template: "Les enfants {verb} dans le jardin chaque après-midi.", translation: "The children play in the garden every afternoon." }],
+            future: [{ person: "1s", template: "Demain je {verb} au football avec des amis.", translation: "Tomorrow I will play soccer with friends." }],
+            imperfect: [{ person: "2s", template: "Petit, tu {verb} toujours dehors.", translation: "As a child you always used to play outside." }],
+            past_perfect: [{ person: "1p", template: "Quand la pluie a commencé, nous {verb} déjà longtemps.", translation: "When the rain started, we had already been playing for a long time." }],
         },
     },
     {
@@ -1131,6 +1449,12 @@ const frenchVerbs: VerbEntry[] = [
             imperfect: { "1s": "travaillais", "2s": "travaillais", "3s": "travaillait", "1p": "travaillions", "2p": "travailliez", "3p": "travaillaient" },
             past_perfect: { "1s": "avais travaillé", "2s": "avais travaillé", "3s": "avait travaillé", "1p": "avions travaillé", "2p": "aviez travaillé", "3p": "avaient travaillé" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "Marc {verb} à la banque depuis cinq ans.", translation: "Marco has worked at the bank for five years." }],
+            future: [{ person: "1p", template: "Demain nous {verb} ensemble sur le projet.", translation: "Tomorrow we will work together on the project." }],
+            imperfect: [{ person: "3p", template: "Jeunes, ils {verb} toute la nuit.", translation: "When they were young they used to work all night." }],
+            past_perfect: [{ person: "2s", template: "Quand nous t'avons appelé, tu {verb} déjà beaucoup.", translation: "When we called you, you had already worked a lot." }],
+        },
     },
     {
         infinitive: "étudier",
@@ -1140,6 +1464,12 @@ const frenchVerbs: VerbEntry[] = [
             future: { "1s": "étudierai", "2s": "étudieras", "3s": "étudiera", "1p": "étudierons", "2p": "étudierez", "3p": "étudieront" },
             imperfect: { "1s": "étudiais", "2s": "étudiais", "3s": "étudiait", "1p": "étudiions", "2p": "étudiiez", "3p": "étudiaient" },
             past_perfect: { "1s": "avais étudié", "2s": "avais étudié", "3s": "avait étudié", "1p": "avions étudié", "2p": "aviez étudié", "3p": "avaient étudié" },
+        },
+        sentences: {
+            present: [{ person: "1s", template: "J'{verb} l'italien chaque soir.", translation: "I study Italian every evening." }],
+            future: [{ person: "3s", template: "Demain elle {verb} pour l'examen.", translation: "Tomorrow she will study for the exam." }],
+            imperfect: [{ person: "1p", template: "Étudiants, nous {verb} toujours à la bibliothèque.", translation: "As students we always used to study in the library." }],
+            past_perfect: [{ person: "3p", template: "Quand l'examen a commencé, ils {verb} déjà assez.", translation: "When the exam started, they had already studied enough." }],
         },
     },
     {
@@ -1151,6 +1481,12 @@ const frenchVerbs: VerbEntry[] = [
             imperfect: { "1s": "apprenais", "2s": "apprenais", "3s": "apprenait", "1p": "apprenions", "2p": "appreniez", "3p": "apprenaient" },
             past_perfect: { "1s": "avais appris", "2s": "avais appris", "3s": "avait appris", "1p": "avions appris", "2p": "aviez appris", "3p": "avaient appris" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "Marc {verb} une nouvelle langue chaque année.", translation: "Marco learns a new language every year." }],
+            future: [{ person: "1p", template: "Demain nous {verb} à jouer de la guitare.", translation: "Tomorrow we will learn to play the guitar." }],
+            imperfect: [{ person: "2s", template: "Enfant, tu {verb} toujours vite.", translation: "As a child you always used to learn quickly." }],
+            past_perfect: [{ person: "1s", template: "Quand le cours a commencé, j'{verb} déjà les bases.", translation: "When the course started, I had already learned the basics." }],
+        },
     },
     {
         infinitive: "comprendre",
@@ -1160,6 +1496,12 @@ const frenchVerbs: VerbEntry[] = [
             future: { "1s": "comprendrai", "2s": "comprendras", "3s": "comprendra", "1p": "comprendrons", "2p": "comprendrez", "3p": "comprendront" },
             imperfect: { "1s": "comprenais", "2s": "comprenais", "3s": "comprenait", "1p": "comprenions", "2p": "compreniez", "3p": "comprenaient" },
             past_perfect: { "1s": "avais compris", "2s": "avais compris", "3s": "avait compris", "1p": "avions compris", "2p": "aviez compris", "3p": "avaient compris" },
+        },
+        sentences: {
+            present: [{ person: "1s", template: "Je {verb} le problème maintenant.", translation: "I understand the problem now." }],
+            future: [{ person: "3p", template: "Demain ils {verb} la vérité.", translation: "Tomorrow they will understand the truth." }],
+            imperfect: [{ person: "2p", template: "Enfants, vous ne {verb} pas toujours les règles.", translation: "As children you (pl.) didn't always understand the rules." }],
+            past_perfect: [{ person: "3s", template: "Quand je le lui ai expliqué, il {verb} déjà tout.", translation: "When I explained it to him, he had already understood everything." }],
         },
     },
     {
@@ -1171,6 +1513,12 @@ const frenchVerbs: VerbEntry[] = [
             imperfect: { "1s": "pensais", "2s": "pensais", "3s": "pensait", "1p": "pensions", "2p": "pensiez", "3p": "pensaient" },
             past_perfect: { "1s": "avais pensé", "2s": "avais pensé", "3s": "avait pensé", "1p": "avions pensé", "2p": "aviez pensé", "3p": "avaient pensé" },
         },
+        sentences: {
+            present: [{ person: "1s", template: "Je {verb} souvent à ce jour-là.", translation: "I often think about that day." }],
+            future: [{ person: "3s", template: "Demain elle {verb} à une solution.", translation: "Tomorrow she will think of a solution." }],
+            imperfect: [{ person: "1p", template: "Jeunes, nous {verb} toujours à l'avenir.", translation: "When we were young we always used to think about the future." }],
+            past_perfect: [{ person: "3p", template: "Avant la réunion, ils {verb} déjà à la proposition.", translation: "Before the meeting, they had already thought about the proposal." }],
+        },
     },
     {
         infinitive: "demander",
@@ -1180,6 +1528,12 @@ const frenchVerbs: VerbEntry[] = [
             future: { "1s": "demanderai", "2s": "demanderas", "3s": "demandera", "1p": "demanderons", "2p": "demanderez", "3p": "demanderont" },
             imperfect: { "1s": "demandais", "2s": "demandais", "3s": "demandait", "1p": "demandions", "2p": "demandiez", "3p": "demandaient" },
             past_perfect: { "1s": "avais demandé", "2s": "avais demandé", "3s": "avait demandé", "1p": "avions demandé", "2p": "aviez demandé", "3p": "avaient demandé" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Marc {verb} toujours la permission.", translation: "Marco always asks permission." }],
+            future: [{ person: "1s", template: "Demain je {verb} quelque chose au professeur.", translation: "Tomorrow I will ask the teacher something." }],
+            imperfect: [{ person: "2p", template: "Enfants, vous {verb} toujours trop de choses.", translation: "As children you (pl.) always used to ask too many things." }],
+            past_perfect: [{ person: "3p", template: "Avant la fin, ils {verb} déjà beaucoup de choses.", translation: "Before the end, they had already asked many things." }],
         },
     },
     {
@@ -1191,6 +1545,12 @@ const frenchVerbs: VerbEntry[] = [
             imperfect: { "1s": "répondais", "2s": "répondais", "3s": "répondait", "1p": "répondions", "2p": "répondiez", "3p": "répondaient" },
             past_perfect: { "1s": "avais répondu", "2s": "avais répondu", "3s": "avait répondu", "1p": "avions répondu", "2p": "aviez répondu", "3p": "avaient répondu" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "Marie {verb} toujours poliment.", translation: "Maria always answers politely." }],
+            future: [{ person: "1p", template: "Demain nous {verb} à toutes les questions.", translation: "Tomorrow we will answer all the questions." }],
+            imperfect: [{ person: "3p", template: "Enfants, ils {verb} toujours calmement.", translation: "As children they always used to answer calmly." }],
+            past_perfect: [{ person: "2s", template: "Quand je t'ai écrit, tu {verb} déjà à la lettre.", translation: "When I wrote to you, you had already answered the letter." }],
+        },
     },
     {
         infinitive: "appeler",
@@ -1200,6 +1560,12 @@ const frenchVerbs: VerbEntry[] = [
             future: { "1s": "appellerai", "2s": "appelleras", "3s": "appellera", "1p": "appellerons", "2p": "appellerez", "3p": "appelleront" },
             imperfect: { "1s": "appelais", "2s": "appelais", "3s": "appelait", "1p": "appelions", "2p": "appeliez", "3p": "appelaient" },
             past_perfect: { "1s": "avais appelé", "2s": "avais appelé", "3s": "avait appelé", "1p": "avions appelé", "2p": "aviez appelé", "3p": "avaient appelé" },
+        },
+        sentences: {
+            present: [{ person: "1s", template: "J'{verb} ma mère chaque dimanche.", translation: "I call my mother every Sunday." }],
+            future: [{ person: "3s", template: "Demain il {verb} le médecin.", translation: "Tomorrow he will call the doctor." }],
+            imperfect: [{ person: "1p", template: "Enfants, nous {verb} toujours nos grands-parents le dimanche.", translation: "As children we always used to call our grandparents on Sundays." }],
+            past_perfect: [{ person: "3p", template: "Avant le dîner, ils {verb} déjà tous les invités.", translation: "Before dinner, they had already called all the guests." }],
         },
     },
     {
@@ -1211,6 +1577,12 @@ const frenchVerbs: VerbEntry[] = [
             imperfect: { "1s": "marchais", "2s": "marchais", "3s": "marchait", "1p": "marchions", "2p": "marchiez", "3p": "marchaient" },
             past_perfect: { "1s": "avais marché", "2s": "avais marché", "3s": "avait marché", "1p": "avions marché", "2p": "aviez marché", "3p": "avaient marché" },
         },
+        sentences: {
+            present: [{ person: "3p", template: "Les touristes {verb} dans la ville toute la journée.", translation: "The tourists walk around the city all day." }],
+            future: [{ person: "1s", template: "Demain je {verb} le long de la plage.", translation: "Tomorrow I will walk along the beach." }],
+            imperfect: [{ person: "2s", template: "Enfant, tu {verb} toujours pieds nus.", translation: "As a child you always used to walk barefoot." }],
+            past_perfect: [{ person: "1p", template: "Avant de nous arrêter, nous {verb} déjà pendant des heures.", translation: "Before stopping, we had already been walking for hours." }],
+        },
     },
     {
         infinitive: "courir",
@@ -1220,6 +1592,12 @@ const frenchVerbs: VerbEntry[] = [
             future: { "1s": "courrai", "2s": "courras", "3s": "courra", "1p": "courrons", "2p": "courrez", "3p": "courront" },
             imperfect: { "1s": "courais", "2s": "courais", "3s": "courait", "1p": "courions", "2p": "couriez", "3p": "couraient" },
             past_perfect: { "1s": "avais couru", "2s": "avais couru", "3s": "avait couru", "1p": "avions couru", "2p": "aviez couru", "3p": "avaient couru" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Marc {verb} dans le parc chaque matin.", translation: "Marco runs in the park every morning." }],
+            future: [{ person: "2p", template: "Demain vous {verb} le marathon.", translation: "Tomorrow you (pl.) will run the marathon." }],
+            imperfect: [{ person: "3s", template: "Jeune, il {verb} pendant des heures sans s'arrêter.", translation: "As a young man he used to run for hours without stopping." }],
+            past_perfect: [{ person: "1s", template: "Quand je suis arrivé, j'{verb} déjà cinq kilomètres.", translation: "When I arrived, I had already run five kilometers." }],
         },
     },
     {
@@ -1231,6 +1609,12 @@ const frenchVerbs: VerbEntry[] = [
             imperfect: { "1s": "voyageais", "2s": "voyageais", "3s": "voyageait", "1p": "voyagions", "2p": "voyagiez", "3p": "voyageaient" },
             past_perfect: { "1s": "avais voyagé", "2s": "avais voyagé", "3s": "avait voyagé", "1p": "avions voyagé", "2p": "aviez voyagé", "3p": "avaient voyagé" },
         },
+        sentences: {
+            present: [{ person: "1p", template: "Nous {verb} en Europe chaque été.", translation: "We travel around Europe every summer." }],
+            future: [{ person: "3s", template: "L'année prochaine elle {verb} en Asie.", translation: "Next year she will travel to Asia." }],
+            imperfect: [{ person: "3p", template: "Jeunes, ils {verb} souvent seuls.", translation: "When they were young they often used to travel alone." }],
+            past_perfect: [{ person: "2s", template: "Avant de t'installer ici, tu {verb} déjà beaucoup.", translation: "Before settling here, you had already traveled a lot." }],
+        },
     },
     {
         infinitive: "chanter",
@@ -1240,6 +1624,12 @@ const frenchVerbs: VerbEntry[] = [
             future: { "1s": "chanterai", "2s": "chanteras", "3s": "chantera", "1p": "chanterons", "2p": "chanterez", "3p": "chanteront" },
             imperfect: { "1s": "chantais", "2s": "chantais", "3s": "chantait", "1p": "chantions", "2p": "chantiez", "3p": "chantaient" },
             past_perfect: { "1s": "avais chanté", "2s": "avais chanté", "3s": "avait chanté", "1p": "avions chanté", "2p": "aviez chanté", "3p": "avaient chanté" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Marie {verb} chaque matin sous la douche.", translation: "Maria sings every morning in the shower." }],
+            future: [{ person: "1s", template: "Demain je {verb} au concert de l'école.", translation: "Tomorrow I will sing at the school concert." }],
+            imperfect: [{ person: "1p", template: "Enfants, nous {verb} toujours en chœur.", translation: "As children we always used to sing in the choir." }],
+            past_perfect: [{ person: "3p", template: "Avant la fin du spectacle, ils {verb} déjà trois chansons.", translation: "Before the end of the show, they had already sung three songs." }],
         },
     },
     {
@@ -1251,6 +1641,12 @@ const frenchVerbs: VerbEntry[] = [
             imperfect: { "1s": "aidais", "2s": "aidais", "3s": "aidait", "1p": "aidions", "2p": "aidiez", "3p": "aidaient" },
             past_perfect: { "1s": "avais aidé", "2s": "avais aidé", "3s": "avait aidé", "1p": "avions aidé", "2p": "aviez aidé", "3p": "avaient aidé" },
         },
+        sentences: {
+            present: [{ person: "1s", template: "J'{verb} mon frère avec ses devoirs.", translation: "I help my brother with homework." }],
+            future: [{ person: "3s", template: "Demain elle {verb} les nouveaux étudiants.", translation: "Tomorrow she will help the new students." }],
+            imperfect: [{ person: "2p", template: "Jeunes, vous {verb} toujours les voisins.", translation: "When you (pl.) were young you always used to help the neighbors." }],
+            past_perfect: [{ person: "1p", template: "Avant la course, nous {verb} déjà beaucoup d'athlètes.", translation: "Before the race, we had already helped many athletes." }],
+        },
     },
     {
         infinitive: "aimer",
@@ -1260,6 +1656,12 @@ const frenchVerbs: VerbEntry[] = [
             future: { "1s": "aimerai", "2s": "aimeras", "3s": "aimera", "1p": "aimerons", "2p": "aimerez", "3p": "aimeront" },
             imperfect: { "1s": "aimais", "2s": "aimais", "3s": "aimait", "1p": "aimions", "2p": "aimiez", "3p": "aimaient" },
             past_perfect: { "1s": "avais aimé", "2s": "avais aimé", "3s": "avait aimé", "1p": "avions aimé", "2p": "aviez aimé", "3p": "avaient aimé" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Marc {verb} sa famille par-dessus tout.", translation: "Marco loves his family above all else." }],
+            future: [{ person: "1s", template: "Pour toujours j'{verb} cette ville.", translation: "I will love this city forever." }],
+            imperfect: [{ person: "3p", template: "Jeunes, ils {verb} beaucoup leur pays natal.", translation: "When they were young they loved their homeland very much." }],
+            past_perfect: [{ person: "1p", template: "Avant de le connaître, nous {verb} déjà cet endroit.", translation: "Before knowing him, we had already loved that place." }],
         },
     },
     {
@@ -1271,6 +1673,12 @@ const frenchVerbs: VerbEntry[] = [
             imperfect: { "1s": "oubliais", "2s": "oubliais", "3s": "oubliait", "1p": "oubliions", "2p": "oubliiez", "3p": "oubliaient" },
             past_perfect: { "1s": "avais oublié", "2s": "avais oublié", "3s": "avait oublié", "1p": "avions oublié", "2p": "aviez oublié", "3p": "avaient oublié" },
         },
+        sentences: {
+            present: [{ person: "1s", template: "J'{verb} souvent les clés de la maison.", translation: "I often forget my house keys." }],
+            future: [{ person: "3s", template: "Il n'{verb} jamais ce jour-là.", translation: "He will never forget that day." }],
+            imperfect: [{ person: "2p", template: "Enfants, vous {verb} toujours vos devoirs.", translation: "As children you (pl.) always used to forget your homework." }],
+            past_perfect: [{ person: "3p", template: "Avant la fin du voyage, ils {verb} déjà le problème.", translation: "Before the end of the trip, they had already forgotten the problem." }],
+        },
     },
     {
         infinitive: "commencer",
@@ -1280,6 +1688,12 @@ const frenchVerbs: VerbEntry[] = [
             future: { "1s": "commencerai", "2s": "commenceras", "3s": "commencera", "1p": "commencerons", "2p": "commencerez", "3p": "commenceront" },
             imperfect: { "1s": "commençais", "2s": "commençais", "3s": "commençait", "1p": "commencions", "2p": "commenciez", "3p": "commençaient" },
             past_perfect: { "1s": "avais commencé", "2s": "avais commencé", "3s": "avait commencé", "1p": "avions commencé", "2p": "aviez commencé", "3p": "avaient commencé" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Le film {verb} à neuf heures du soir.", translation: "The movie begins at nine in the evening." }],
+            future: [{ person: "1p", template: "Demain nous {verb} un nouveau projet.", translation: "Tomorrow we will begin a new project." }],
+            imperfect: [{ person: "3p", template: "Chaque jour ils {verb} à travailler tôt.", translation: "Every day they used to begin working early." }],
+            past_perfect: [{ person: "1s", template: "Quand je suis arrivé, j'{verb} déjà le travail.", translation: "When I arrived, I had already begun the work." }],
         },
     },
 ];
@@ -1525,9 +1939,6 @@ const spanishVerbs: VerbEntry[] = [
             past_perfect: [{ person: "3p", template: "Ellos ya {verb} mucho tiempo cuando ella llegó.", translation: "They had already been waiting a long time when she arrived." }],
         },
     },
-    // The verbs below have conjugation tables only (no curated example
-    // sentences); the practice engine falls back to a simple generated
-    // sentence for these via fallbackTemplate().
     {
         infinitive: "creer",
         english: "to believe",
@@ -1536,6 +1947,12 @@ const spanishVerbs: VerbEntry[] = [
             future: { "1s": "creeré", "2s": "creerás", "3s": "creerá", "1p": "creeremos", "2p": "creeréis", "3p": "creerán" },
             imperfect: { "1s": "creía", "2s": "creías", "3s": "creía", "1p": "creíamos", "2p": "creíais", "3p": "creían" },
             past_perfect: { "1s": "había creído", "2s": "habías creído", "3s": "había creído", "1p": "habíamos creído", "2p": "habíais creído", "3p": "habían creído" },
+        },
+        sentences: {
+            present: [{ person: "1s", template: "Yo {verb} en este proyecto.", translation: "I believe in this project." }],
+            future: [{ person: "3s", template: "Al final ella {verb} en nuestra idea.", translation: "In the end she will believe our idea." }],
+            imperfect: [{ person: "3p", template: "Ellos {verb} en un futuro mejor.", translation: "They used to believe in a better future." }],
+            past_perfect: [{ person: "1p", template: "Nosotros ya {verb} esa historia.", translation: "We had already believed that story." }],
         },
     },
     {
@@ -1547,6 +1964,12 @@ const spanishVerbs: VerbEntry[] = [
             imperfect: { "1s": "dormía", "2s": "dormías", "3s": "dormía", "1p": "dormíamos", "2p": "dormíais", "3p": "dormían" },
             past_perfect: { "1s": "había dormido", "2s": "habías dormido", "3s": "había dormido", "1p": "habíamos dormido", "2p": "habíais dormido", "3p": "habían dormido" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "El niño {verb} toda la noche.", translation: "The child sleeps all night." }],
+            future: [{ person: "1s", template: "Esta noche {verb} temprano.", translation: "Tonight I will sleep early." }],
+            imperfect: [{ person: "2p", template: "Vosotros siempre {verb} hasta tarde.", translation: "You (pl.) always used to sleep late." }],
+            past_perfect: [{ person: "3p", template: "Ellos ya {verb} cuando llegamos.", translation: "They had already been sleeping when we arrived." }],
+        },
     },
     {
         infinitive: "terminar",
@@ -1556,6 +1979,12 @@ const spanishVerbs: VerbEntry[] = [
             future: { "1s": "terminaré", "2s": "terminarás", "3s": "terminará", "1p": "terminaremos", "2p": "terminaréis", "3p": "terminarán" },
             imperfect: { "1s": "terminaba", "2s": "terminabas", "3s": "terminaba", "1p": "terminábamos", "2p": "terminabais", "3p": "terminaban" },
             past_perfect: { "1s": "había terminado", "2s": "habías terminado", "3s": "había terminado", "1p": "habíamos terminado", "2p": "habíais terminado", "3p": "habían terminado" },
+        },
+        sentences: {
+            present: [{ person: "1p", template: "Nosotros {verb} el trabajo a las seis.", translation: "We finish work at six." }],
+            future: [{ person: "2s", template: "Mañana tú {verb} el libro.", translation: "Tomorrow you will finish the book." }],
+            imperfect: [{ person: "3s", template: "Cada noche él {verb} tarde.", translation: "Every evening he used to finish late." }],
+            past_perfect: [{ person: "1s", template: "Yo ya {verb} la tarea antes de la cena.", translation: "I had already finished the homework before dinner." }],
         },
     },
     {
@@ -1567,6 +1996,12 @@ const spanishVerbs: VerbEntry[] = [
             imperfect: { "1s": "escribía", "2s": "escribías", "3s": "escribía", "1p": "escribíamos", "2p": "escribíais", "3p": "escribían" },
             past_perfect: { "1s": "había escrito", "2s": "habías escrito", "3s": "había escrito", "1p": "habíamos escrito", "2p": "habíais escrito", "3p": "habían escrito" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "María {verb} una carta cada semana.", translation: "Maria writes a letter every week." }],
+            future: [{ person: "1p", template: "Mañana {verb} el informe.", translation: "Tomorrow we will write the report." }],
+            imperfect: [{ person: "1s", template: "De estudiante yo {verb} poemas.", translation: "As a student I used to write poems." }],
+            past_perfect: [{ person: "3p", template: "Ellos ya {verb} el mensaje antes de partir.", translation: "They had already written the message before leaving." }],
+        },
     },
     {
         infinitive: "ir",
@@ -1576,6 +2011,12 @@ const spanishVerbs: VerbEntry[] = [
             future: { "1s": "iré", "2s": "irás", "3s": "irá", "1p": "iremos", "2p": "iréis", "3p": "irán" },
             imperfect: { "1s": "iba", "2s": "ibas", "3s": "iba", "1p": "íbamos", "2p": "ibais", "3p": "iban" },
             past_perfect: { "1s": "había ido", "2s": "habías ido", "3s": "había ido", "1p": "habíamos ido", "2p": "habíais ido", "3p": "habían ido" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "María {verb} al mercado todos los sábados.", translation: "Maria goes to the market every Saturday." }],
+            future: [{ person: "1s", template: "Mañana {verb} a Roma por trabajo.", translation: "Tomorrow I will go to Rome for work." }],
+            imperfect: [{ person: "3p", template: "De niños siempre {verb} al parque.", translation: "As children they always used to go to the park." }],
+            past_perfect: [{ person: "1p", template: "Cuando ella llegó, nosotros ya {verb} a casa.", translation: "When she arrived, we had already gone home." }],
         },
     },
     {
@@ -1587,6 +2028,12 @@ const spanishVerbs: VerbEntry[] = [
             imperfect: { "1s": "venía", "2s": "venías", "3s": "venía", "1p": "veníamos", "2p": "veníais", "3p": "venían" },
             past_perfect: { "1s": "había venido", "2s": "habías venido", "3s": "había venido", "1p": "habíamos venido", "2p": "habíais venido", "3p": "habían venido" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "Marcos {verb} a vernos cada domingo.", translation: "Marco comes to see us every Sunday." }],
+            future: [{ person: "2s", template: "¿Mañana tú {verb} a la fiesta?", translation: "Will you come to the party tomorrow?" }],
+            imperfect: [{ person: "1p", template: "De jóvenes {verb} a menudo a esta ciudad.", translation: "When we were young we often used to come to this city." }],
+            past_perfect: [{ person: "3s", template: "Cuando lo llamamos, él ya {verb} a la reunión.", translation: "When we called him, he had already come to the meeting." }],
+        },
     },
     {
         infinitive: "dar",
@@ -1596,6 +2043,12 @@ const spanishVerbs: VerbEntry[] = [
             future: { "1s": "daré", "2s": "darás", "3s": "dará", "1p": "daremos", "2p": "daréis", "3p": "darán" },
             imperfect: { "1s": "daba", "2s": "dabas", "3s": "daba", "1p": "dábamos", "2p": "dabais", "3p": "daban" },
             past_perfect: { "1s": "había dado", "2s": "habías dado", "3s": "había dado", "1p": "habíamos dado", "2p": "habíais dado", "3p": "habían dado" },
+        },
+        sentences: {
+            present: [{ person: "1s", template: "Yo {verb} un regalo a mi madre cada año.", translation: "I give a gift to my mother every year." }],
+            future: [{ person: "3p", template: "Mañana ellos {verb} una respuesta al director.", translation: "Tomorrow they will give an answer to the director." }],
+            imperfect: [{ person: "2s", template: "De niño tú siempre {verb} tus juguetes a tus amigos.", translation: "As a child you always used to give your toys to your friends." }],
+            past_perfect: [{ person: "1p", template: "Cuando él llegó, nosotros ya {verb} los boletos.", translation: "When he arrived, we had already given the tickets." }],
         },
     },
     {
@@ -1607,6 +2060,12 @@ const spanishVerbs: VerbEntry[] = [
             imperfect: { "1s": "llegaba", "2s": "llegabas", "3s": "llegaba", "1p": "llegábamos", "2p": "llegabais", "3p": "llegaban" },
             past_perfect: { "1s": "había llegado", "2s": "habías llegado", "3s": "había llegado", "1p": "habíamos llegado", "2p": "habíais llegado", "3p": "habían llegado" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "El tren {verb} a las ocho cada mañana.", translation: "The train arrives at eight every morning." }],
+            future: [{ person: "2p", template: "Mañana vosotros {verb} antes que nosotros.", translation: "Tomorrow you (pl.) will arrive before us." }],
+            imperfect: [{ person: "3p", template: "Cada verano {verb} tarde.", translation: "Every summer they used to arrive late." }],
+            past_perfect: [{ person: "3s", template: "Cuando llamamos, ella ya {verb} a la oficina.", translation: "When we called, she had already arrived at the office." }],
+        },
     },
     {
         infinitive: "entrar",
@@ -1616,6 +2075,12 @@ const spanishVerbs: VerbEntry[] = [
             future: { "1s": "entraré", "2s": "entrarás", "3s": "entrará", "1p": "entraremos", "2p": "entraréis", "3p": "entrarán" },
             imperfect: { "1s": "entraba", "2s": "entrabas", "3s": "entraba", "1p": "entrábamos", "2p": "entrabais", "3p": "entraban" },
             past_perfect: { "1s": "había entrado", "2s": "habías entrado", "3s": "había entrado", "1p": "habíamos entrado", "2p": "habíais entrado", "3p": "habían entrado" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "El gato {verb} en casa por la ventana.", translation: "The cat enters the house through the window." }],
+            future: [{ person: "1s", template: "Mañana {verb} a la oficina más tarde.", translation: "Tomorrow I will enter the office later." }],
+            imperfect: [{ person: "3p", template: "Cada noche {verb} sin hacer ruido.", translation: "Every evening they used to enter without making noise." }],
+            past_perfect: [{ person: "2s", template: "Cuando te llamamos, tú ya {verb} a clase.", translation: "When we called you, you had already entered the classroom." }],
         },
     },
     {
@@ -1627,6 +2092,12 @@ const spanishVerbs: VerbEntry[] = [
             imperfect: { "1s": "partía", "2s": "partías", "3s": "partía", "1p": "partíamos", "2p": "partíais", "3p": "partían" },
             past_perfect: { "1s": "había partido", "2s": "habías partido", "3s": "había partido", "1p": "habíamos partido", "2p": "habíais partido", "3p": "habían partido" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "El avión {verb} a las seis de la mañana.", translation: "The plane leaves at six in the morning." }],
+            future: [{ person: "1p", template: "Mañana {verb} de vacaciones.", translation: "Tomorrow we will leave for vacation." }],
+            imperfect: [{ person: "2p", template: "Cada verano vosotros {verb} temprano por la mañana.", translation: "Every summer you (pl.) used to leave early in the morning." }],
+            past_perfect: [{ person: "3p", template: "Cuando llegamos, ellos ya {verb}.", translation: "When we arrived, they had already left." }],
+        },
     },
     {
         infinitive: "volver",
@@ -1636,6 +2107,12 @@ const spanishVerbs: VerbEntry[] = [
             future: { "1s": "volveré", "2s": "volverás", "3s": "volverá", "1p": "volveremos", "2p": "volveréis", "3p": "volverán" },
             imperfect: { "1s": "volvía", "2s": "volvías", "3s": "volvía", "1p": "volvíamos", "2p": "volvíais", "3p": "volvían" },
             past_perfect: { "1s": "había vuelto", "2s": "habías vuelto", "3s": "había vuelto", "1p": "habíamos vuelto", "2p": "habíais vuelto", "3p": "habían vuelto" },
+        },
+        sentences: {
+            present: [{ person: "1s", template: "Yo {verb} a casa a las siete cada noche.", translation: "I return home at seven every evening." }],
+            future: [{ person: "3s", template: "Mañana él {verb} del viaje.", translation: "Tomorrow he will return from the trip." }],
+            imperfect: [{ person: "1p", template: "De niños siempre {verb} a pie del colegio.", translation: "As children we always used to return on foot from school." }],
+            past_perfect: [{ person: "3p", template: "Cuando los buscamos, ellos ya {verb} a casa.", translation: "When we looked for them, they had already returned home." }],
         },
     },
     {
@@ -1647,6 +2124,12 @@ const spanishVerbs: VerbEntry[] = [
             imperfect: { "1s": "buscaba", "2s": "buscabas", "3s": "buscaba", "1p": "buscábamos", "2p": "buscabais", "3p": "buscaban" },
             past_perfect: { "1s": "había buscado", "2s": "habías buscado", "3s": "había buscado", "1p": "habíamos buscado", "2p": "habíais buscado", "3p": "habían buscado" },
         },
+        sentences: {
+            present: [{ person: "1s", template: "Yo {verb} las llaves cada mañana.", translation: "I look for my keys every morning." }],
+            future: [{ person: "3p", template: "Mañana ellos {verb} un nuevo apartamento.", translation: "Tomorrow they will look for a new apartment." }],
+            imperfect: [{ person: "2s", template: "De niño tú siempre {verb} nuevas aventuras.", translation: "As a child you always used to look for new adventures." }],
+            past_perfect: [{ person: "1p", template: "Antes de encontrarlo, nosotros ya {verb} por todas partes.", translation: "Before finding it, we had already looked everywhere." }],
+        },
     },
     {
         infinitive: "encontrar",
@@ -1656,6 +2139,12 @@ const spanishVerbs: VerbEntry[] = [
             future: { "1s": "encontraré", "2s": "encontrarás", "3s": "encontrará", "1p": "encontraremos", "2p": "encontraréis", "3p": "encontrarán" },
             imperfect: { "1s": "encontraba", "2s": "encontrabas", "3s": "encontraba", "1p": "encontrábamos", "2p": "encontrabais", "3p": "encontraban" },
             past_perfect: { "1s": "había encontrado", "2s": "habías encontrado", "3s": "había encontrado", "1p": "habíamos encontrado", "2p": "habíais encontrado", "3p": "habían encontrado" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Marcos siempre {verb} una solución.", translation: "Marco always finds a solution." }],
+            future: [{ person: "1s", template: "Mañana {verb} el tiempo para llamarte.", translation: "Tomorrow I will find the time to call you." }],
+            imperfect: [{ person: "3p", template: "Cada vez {verb} una razón para pelear.", translation: "Every time they used to find a reason to argue." }],
+            past_perfect: [{ person: "1p", template: "Antes del final, nosotros ya {verb} la respuesta.", translation: "Before the end, we had already found the answer." }],
         },
     },
     {
@@ -1667,6 +2156,12 @@ const spanishVerbs: VerbEntry[] = [
             imperfect: { "1s": "compraba", "2s": "comprabas", "3s": "compraba", "1p": "comprábamos", "2p": "comprabais", "3p": "compraban" },
             past_perfect: { "1s": "había comprado", "2s": "habías comprado", "3s": "había comprado", "1p": "habíamos comprado", "2p": "habíais comprado", "3p": "habían comprado" },
         },
+        sentences: {
+            present: [{ person: "1s", template: "Yo {verb} el pan cada mañana.", translation: "I buy bread every morning." }],
+            future: [{ person: "3s", template: "Mañana ella {verb} un vestido nuevo.", translation: "Tomorrow she will buy a new dress." }],
+            imperfect: [{ person: "1p", template: "De jóvenes siempre {verb} la misma ropa.", translation: "When we were young we always used to buy the same clothes." }],
+            past_perfect: [{ person: "3p", template: "Cuando llegamos a la tienda, ellos ya {verb} todo.", translation: "When we arrived at the store, they had already bought everything." }],
+        },
     },
     {
         infinitive: "vender",
@@ -1676,6 +2171,12 @@ const spanishVerbs: VerbEntry[] = [
             future: { "1s": "venderé", "2s": "venderás", "3s": "venderá", "1p": "venderemos", "2p": "venderéis", "3p": "venderán" },
             imperfect: { "1s": "vendía", "2s": "vendías", "3s": "vendía", "1p": "vendíamos", "2p": "vendíais", "3p": "vendían" },
             past_perfect: { "1s": "había vendido", "2s": "habías vendido", "3s": "había vendido", "1p": "habíamos vendido", "2p": "habíais vendido", "3p": "habían vendido" },
+        },
+        sentences: {
+            present: [{ person: "3p", template: "Ellos {verb} fruta en el mercado.", translation: "They sell fruit at the market." }],
+            future: [{ person: "1s", template: "Mañana {verb} mi vieja bicicleta.", translation: "Tomorrow I will sell my old bike." }],
+            imperfect: [{ person: "3s", template: "La tienda siempre {verb} productos frescos.", translation: "The store always used to sell fresh products." }],
+            past_perfect: [{ person: "2p", template: "Cuando volvimos, vosotros ya {verb} la casa.", translation: "When we came back, you (pl.) had already sold the house." }],
         },
     },
     {
@@ -1687,6 +2188,12 @@ const spanishVerbs: VerbEntry[] = [
             imperfect: { "1s": "abría", "2s": "abrías", "3s": "abría", "1p": "abríamos", "2p": "abríais", "3p": "abrían" },
             past_perfect: { "1s": "había abierto", "2s": "habías abierto", "3s": "había abierto", "1p": "habíamos abierto", "2p": "habíais abierto", "3p": "habían abierto" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "La tienda {verb} a las nueve cada día.", translation: "The store opens at nine every day." }],
+            future: [{ person: "1s", template: "Mañana {verb} una nueva cuenta bancaria.", translation: "Tomorrow I will open a new bank account." }],
+            imperfect: [{ person: "3p", template: "Cada mañana {verb} las ventanas temprano.", translation: "Every morning they used to open the windows early." }],
+            past_perfect: [{ person: "1p", template: "Cuando llegaron, nosotros ya {verb} la puerta.", translation: "When they arrived, we had already opened the door." }],
+        },
     },
     {
         infinitive: "cerrar",
@@ -1696,6 +2203,12 @@ const spanishVerbs: VerbEntry[] = [
             future: { "1s": "cerraré", "2s": "cerrarás", "3s": "cerrará", "1p": "cerraremos", "2p": "cerraréis", "3p": "cerrarán" },
             imperfect: { "1s": "cerraba", "2s": "cerrabas", "3s": "cerraba", "1p": "cerrábamos", "2p": "cerrabais", "3p": "cerraban" },
             past_perfect: { "1s": "había cerrado", "2s": "habías cerrado", "3s": "había cerrado", "1p": "habíamos cerrado", "2p": "habíais cerrado", "3p": "habían cerrado" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "El museo {verb} a las seis de la tarde.", translation: "The museum closes at six in the evening." }],
+            future: [{ person: "2p", template: "Mañana vosotros {verb} la tienda antes.", translation: "Tomorrow you (pl.) will close the shop earlier." }],
+            imperfect: [{ person: "1s", template: "De niño yo siempre {verb} la puerta con cuidado.", translation: "As a child I always used to close the door carefully." }],
+            past_perfect: [{ person: "3p", template: "Cuando volvimos, ellos ya {verb} las ventanas.", translation: "When we came back, they had already closed the windows." }],
         },
     },
     {
@@ -1707,6 +2220,12 @@ const spanishVerbs: VerbEntry[] = [
             imperfect: { "1s": "leía", "2s": "leías", "3s": "leía", "1p": "leíamos", "2p": "leíais", "3p": "leían" },
             past_perfect: { "1s": "había leído", "2s": "habías leído", "3s": "había leído", "1p": "habíamos leído", "2p": "habíais leído", "3p": "habían leído" },
         },
+        sentences: {
+            present: [{ person: "1s", template: "Yo {verb} un libro cada semana.", translation: "I read a book every week." }],
+            future: [{ person: "3s", template: "Mañana ella {verb} el periódico con calma.", translation: "Tomorrow she will read the newspaper calmly." }],
+            imperfect: [{ person: "1p", template: "De niños siempre {verb} antes de dormir.", translation: "As children we always used to read before sleeping." }],
+            past_perfect: [{ person: "3s", template: "Cuando empezó la clase, él ya {verb} el capítulo.", translation: "When the class started, he had already read the chapter." }],
+        },
     },
     {
         infinitive: "jugar",
@@ -1716,6 +2235,12 @@ const spanishVerbs: VerbEntry[] = [
             future: { "1s": "jugaré", "2s": "jugarás", "3s": "jugará", "1p": "jugaremos", "2p": "jugaréis", "3p": "jugarán" },
             imperfect: { "1s": "jugaba", "2s": "jugabas", "3s": "jugaba", "1p": "jugábamos", "2p": "jugabais", "3p": "jugaban" },
             past_perfect: { "1s": "había jugado", "2s": "habías jugado", "3s": "había jugado", "1p": "habíamos jugado", "2p": "habíais jugado", "3p": "habían jugado" },
+        },
+        sentences: {
+            present: [{ person: "3p", template: "Los niños {verb} en el jardín cada tarde.", translation: "The children play in the garden every afternoon." }],
+            future: [{ person: "1s", template: "Mañana {verb} al fútbol con amigos.", translation: "Tomorrow I will play soccer with friends." }],
+            imperfect: [{ person: "2s", template: "De pequeño tú siempre {verb} afuera.", translation: "As a child you always used to play outside." }],
+            past_perfect: [{ person: "1p", template: "Cuando empezó la lluvia, nosotros ya {verb} mucho tiempo.", translation: "When the rain started, we had already been playing for a long time." }],
         },
     },
     {
@@ -1727,6 +2252,12 @@ const spanishVerbs: VerbEntry[] = [
             imperfect: { "1s": "trabajaba", "2s": "trabajabas", "3s": "trabajaba", "1p": "trabajábamos", "2p": "trabajabais", "3p": "trabajaban" },
             past_perfect: { "1s": "había trabajado", "2s": "habías trabajado", "3s": "había trabajado", "1p": "habíamos trabajado", "2p": "habíais trabajado", "3p": "habían trabajado" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "Marcos {verb} en el banco desde hace cinco años.", translation: "Marco has worked at the bank for five years." }],
+            future: [{ person: "1p", template: "Mañana {verb} juntos en el proyecto.", translation: "Tomorrow we will work together on the project." }],
+            imperfect: [{ person: "3p", template: "De jóvenes {verb} toda la noche.", translation: "When they were young they used to work all night." }],
+            past_perfect: [{ person: "2s", template: "Cuando te llamamos, tú ya {verb} mucho.", translation: "When we called you, you had already worked a lot." }],
+        },
     },
     {
         infinitive: "estudiar",
@@ -1736,6 +2267,12 @@ const spanishVerbs: VerbEntry[] = [
             future: { "1s": "estudiaré", "2s": "estudiarás", "3s": "estudiará", "1p": "estudiaremos", "2p": "estudiaréis", "3p": "estudiarán" },
             imperfect: { "1s": "estudiaba", "2s": "estudiabas", "3s": "estudiaba", "1p": "estudiábamos", "2p": "estudiabais", "3p": "estudiaban" },
             past_perfect: { "1s": "había estudiado", "2s": "habías estudiado", "3s": "había estudiado", "1p": "habíamos estudiado", "2p": "habíais estudiado", "3p": "habían estudiado" },
+        },
+        sentences: {
+            present: [{ person: "1s", template: "Yo {verb} italiano cada noche.", translation: "I study Italian every evening." }],
+            future: [{ person: "3s", template: "Mañana ella {verb} para el examen.", translation: "Tomorrow she will study for the exam." }],
+            imperfect: [{ person: "1p", template: "De estudiantes siempre {verb} en la biblioteca.", translation: "As students we always used to study in the library." }],
+            past_perfect: [{ person: "3p", template: "Cuando empezó el examen, ellos ya {verb} bastante.", translation: "When the exam started, they had already studied enough." }],
         },
     },
     {
@@ -1747,6 +2284,12 @@ const spanishVerbs: VerbEntry[] = [
             imperfect: { "1s": "aprendía", "2s": "aprendías", "3s": "aprendía", "1p": "aprendíamos", "2p": "aprendíais", "3p": "aprendían" },
             past_perfect: { "1s": "había aprendido", "2s": "habías aprendido", "3s": "había aprendido", "1p": "habíamos aprendido", "2p": "habíais aprendido", "3p": "habían aprendido" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "Marcos {verb} un idioma nuevo cada año.", translation: "Marco learns a new language every year." }],
+            future: [{ person: "1p", template: "Mañana {verb} a tocar la guitarra.", translation: "Tomorrow we will learn to play the guitar." }],
+            imperfect: [{ person: "2s", template: "De niño tú siempre {verb} rápido.", translation: "As a child you always used to learn quickly." }],
+            past_perfect: [{ person: "1s", template: "Cuando empezó el curso, yo ya {verb} las bases.", translation: "When the course started, I had already learned the basics." }],
+        },
     },
     {
         infinitive: "entender",
@@ -1756,6 +2299,12 @@ const spanishVerbs: VerbEntry[] = [
             future: { "1s": "entenderé", "2s": "entenderás", "3s": "entenderá", "1p": "entenderemos", "2p": "entenderéis", "3p": "entenderán" },
             imperfect: { "1s": "entendía", "2s": "entendías", "3s": "entendía", "1p": "entendíamos", "2p": "entendíais", "3p": "entendían" },
             past_perfect: { "1s": "había entendido", "2s": "habías entendido", "3s": "había entendido", "1p": "habíamos entendido", "2p": "habíais entendido", "3p": "habían entendido" },
+        },
+        sentences: {
+            present: [{ person: "1s", template: "Yo {verb} el problema ahora.", translation: "I understand the problem now." }],
+            future: [{ person: "3p", template: "Mañana ellos {verb} la verdad.", translation: "Tomorrow they will understand the truth." }],
+            imperfect: [{ person: "2p", template: "De niños vosotros no siempre {verb} las reglas.", translation: "As children you (pl.) didn't always understand the rules." }],
+            past_perfect: [{ person: "3s", template: "Cuando se lo expliqué, él ya {verb} todo.", translation: "When I explained it to him, he had already understood everything." }],
         },
     },
     {
@@ -1767,6 +2316,12 @@ const spanishVerbs: VerbEntry[] = [
             imperfect: { "1s": "pensaba", "2s": "pensabas", "3s": "pensaba", "1p": "pensábamos", "2p": "pensabais", "3p": "pensaban" },
             past_perfect: { "1s": "había pensado", "2s": "habías pensado", "3s": "había pensado", "1p": "habíamos pensado", "2p": "habíais pensado", "3p": "habían pensado" },
         },
+        sentences: {
+            present: [{ person: "1s", template: "Yo {verb} a menudo en ese día.", translation: "I often think about that day." }],
+            future: [{ person: "3s", template: "Mañana ella {verb} en una solución.", translation: "Tomorrow she will think of a solution." }],
+            imperfect: [{ person: "1p", template: "De jóvenes siempre {verb} en el futuro.", translation: "When we were young we always used to think about the future." }],
+            past_perfect: [{ person: "3p", template: "Antes de la reunión, ellos ya {verb} en la propuesta.", translation: "Before the meeting, they had already thought about the proposal." }],
+        },
     },
     {
         infinitive: "preguntar",
@@ -1776,6 +2331,12 @@ const spanishVerbs: VerbEntry[] = [
             future: { "1s": "preguntaré", "2s": "preguntarás", "3s": "preguntará", "1p": "preguntaremos", "2p": "preguntaréis", "3p": "preguntarán" },
             imperfect: { "1s": "preguntaba", "2s": "preguntabas", "3s": "preguntaba", "1p": "preguntábamos", "2p": "preguntabais", "3p": "preguntaban" },
             past_perfect: { "1s": "había preguntado", "2s": "habías preguntado", "3s": "había preguntado", "1p": "habíamos preguntado", "2p": "habíais preguntado", "3p": "habían preguntado" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Marcos siempre {verb} el permiso.", translation: "Marco always asks permission." }],
+            future: [{ person: "1s", template: "Mañana {verb} algo al profesor.", translation: "Tomorrow I will ask the teacher something." }],
+            imperfect: [{ person: "2p", template: "De niños vosotros siempre {verb} demasiadas cosas.", translation: "As children you (pl.) always used to ask too many things." }],
+            past_perfect: [{ person: "3p", template: "Antes del final, ellos ya {verb} muchas cosas.", translation: "Before the end, they had already asked many things." }],
         },
     },
     {
@@ -1787,6 +2348,12 @@ const spanishVerbs: VerbEntry[] = [
             imperfect: { "1s": "respondía", "2s": "respondías", "3s": "respondía", "1p": "respondíamos", "2p": "respondíais", "3p": "respondían" },
             past_perfect: { "1s": "había respondido", "2s": "habías respondido", "3s": "había respondido", "1p": "habíamos respondido", "2p": "habíais respondido", "3p": "habían respondido" },
         },
+        sentences: {
+            present: [{ person: "3s", template: "María siempre {verb} educadamente.", translation: "Maria always answers politely." }],
+            future: [{ person: "1p", template: "Mañana {verb} a todas las preguntas.", translation: "Tomorrow we will answer all the questions." }],
+            imperfect: [{ person: "3p", template: "De niños siempre {verb} con calma.", translation: "As children they always used to answer calmly." }],
+            past_perfect: [{ person: "2s", template: "Cuando te escribí, tú ya {verb} a la carta.", translation: "When I wrote to you, you had already answered the letter." }],
+        },
     },
     {
         infinitive: "llamar",
@@ -1796,6 +2363,12 @@ const spanishVerbs: VerbEntry[] = [
             future: { "1s": "llamaré", "2s": "llamarás", "3s": "llamará", "1p": "llamaremos", "2p": "llamaréis", "3p": "llamarán" },
             imperfect: { "1s": "llamaba", "2s": "llamabas", "3s": "llamaba", "1p": "llamábamos", "2p": "llamabais", "3p": "llamaban" },
             past_perfect: { "1s": "había llamado", "2s": "habías llamado", "3s": "había llamado", "1p": "habíamos llamado", "2p": "habíais llamado", "3p": "habían llamado" },
+        },
+        sentences: {
+            present: [{ person: "1s", template: "Yo {verb} a mi madre cada domingo.", translation: "I call my mother every Sunday." }],
+            future: [{ person: "3s", template: "Mañana él {verb} al médico.", translation: "Tomorrow he will call the doctor." }],
+            imperfect: [{ person: "1p", template: "De niños siempre {verb} a los abuelos los domingos.", translation: "As children we always used to call our grandparents on Sundays." }],
+            past_perfect: [{ person: "3p", template: "Antes de la cena, ellos ya {verb} a todos los invitados.", translation: "Before dinner, they had already called all the guests." }],
         },
     },
     {
@@ -1807,6 +2380,12 @@ const spanishVerbs: VerbEntry[] = [
             imperfect: { "1s": "caminaba", "2s": "caminabas", "3s": "caminaba", "1p": "caminábamos", "2p": "caminabais", "3p": "caminaban" },
             past_perfect: { "1s": "había caminado", "2s": "habías caminado", "3s": "había caminado", "1p": "habíamos caminado", "2p": "habíais caminado", "3p": "habían caminado" },
         },
+        sentences: {
+            present: [{ person: "3p", template: "Los turistas {verb} por la ciudad todo el día.", translation: "The tourists walk around the city all day." }],
+            future: [{ person: "1s", template: "Mañana {verb} por la playa.", translation: "Tomorrow I will walk along the beach." }],
+            imperfect: [{ person: "2s", template: "De niño tú siempre {verb} descalzo.", translation: "As a child you always used to walk barefoot." }],
+            past_perfect: [{ person: "1p", template: "Antes de parar, nosotros ya {verb} durante horas.", translation: "Before stopping, we had already been walking for hours." }],
+        },
     },
     {
         infinitive: "correr",
@@ -1816,6 +2395,12 @@ const spanishVerbs: VerbEntry[] = [
             future: { "1s": "correré", "2s": "correrás", "3s": "correrá", "1p": "correremos", "2p": "correréis", "3p": "correrán" },
             imperfect: { "1s": "corría", "2s": "corrías", "3s": "corría", "1p": "corríamos", "2p": "corríais", "3p": "corrían" },
             past_perfect: { "1s": "había corrido", "2s": "habías corrido", "3s": "había corrido", "1p": "habíamos corrido", "2p": "habíais corrido", "3p": "habían corrido" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Marcos {verb} en el parque cada mañana.", translation: "Marco runs in the park every morning." }],
+            future: [{ person: "2p", template: "Mañana vosotros {verb} el maratón.", translation: "Tomorrow you (pl.) will run the marathon." }],
+            imperfect: [{ person: "3s", template: "De joven él {verb} durante horas sin parar.", translation: "As a young man he used to run for hours without stopping." }],
+            past_perfect: [{ person: "1s", template: "Cuando llegué, yo ya {verb} cinco kilómetros.", translation: "When I arrived, I had already run five kilometers." }],
         },
     },
     {
@@ -1827,6 +2412,12 @@ const spanishVerbs: VerbEntry[] = [
             imperfect: { "1s": "viajaba", "2s": "viajabas", "3s": "viajaba", "1p": "viajábamos", "2p": "viajabais", "3p": "viajaban" },
             past_perfect: { "1s": "había viajado", "2s": "habías viajado", "3s": "había viajado", "1p": "habíamos viajado", "2p": "habíais viajado", "3p": "habían viajado" },
         },
+        sentences: {
+            present: [{ person: "1p", template: "Nosotros {verb} por Europa cada verano.", translation: "We travel around Europe every summer." }],
+            future: [{ person: "3s", template: "El próximo año ella {verb} por Asia.", translation: "Next year she will travel to Asia." }],
+            imperfect: [{ person: "3p", template: "De jóvenes {verb} a menudo solos.", translation: "When they were young they often used to travel alone." }],
+            past_perfect: [{ person: "2s", template: "Antes de establecerte aquí, tú ya {verb} mucho.", translation: "Before settling here, you had already traveled a lot." }],
+        },
     },
     {
         infinitive: "cantar",
@@ -1836,6 +2427,12 @@ const spanishVerbs: VerbEntry[] = [
             future: { "1s": "cantaré", "2s": "cantarás", "3s": "cantará", "1p": "cantaremos", "2p": "cantaréis", "3p": "cantarán" },
             imperfect: { "1s": "cantaba", "2s": "cantabas", "3s": "cantaba", "1p": "cantábamos", "2p": "cantabais", "3p": "cantaban" },
             past_perfect: { "1s": "había cantado", "2s": "habías cantado", "3s": "había cantado", "1p": "habíamos cantado", "2p": "habíais cantado", "3p": "habían cantado" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "María {verb} cada mañana en la ducha.", translation: "Maria sings every morning in the shower." }],
+            future: [{ person: "1s", template: "Mañana {verb} en el concierto de la escuela.", translation: "Tomorrow I will sing at the school concert." }],
+            imperfect: [{ person: "1p", template: "De niños siempre {verb} en el coro.", translation: "As children we always used to sing in the choir." }],
+            past_perfect: [{ person: "3p", template: "Antes del final del espectáculo, ellos ya {verb} tres canciones.", translation: "Before the end of the show, they had already sung three songs." }],
         },
     },
     {
@@ -1847,6 +2444,12 @@ const spanishVerbs: VerbEntry[] = [
             imperfect: { "1s": "ayudaba", "2s": "ayudabas", "3s": "ayudaba", "1p": "ayudábamos", "2p": "ayudabais", "3p": "ayudaban" },
             past_perfect: { "1s": "había ayudado", "2s": "habías ayudado", "3s": "había ayudado", "1p": "habíamos ayudado", "2p": "habíais ayudado", "3p": "habían ayudado" },
         },
+        sentences: {
+            present: [{ person: "1s", template: "Yo {verb} a mi hermano con la tarea.", translation: "I help my brother with homework." }],
+            future: [{ person: "3s", template: "Mañana ella {verb} a los nuevos estudiantes.", translation: "Tomorrow she will help the new students." }],
+            imperfect: [{ person: "2p", template: "De jóvenes vosotros siempre {verb} a los vecinos.", translation: "When you (pl.) were young you always used to help the neighbors." }],
+            past_perfect: [{ person: "1p", template: "Antes de la carrera, nosotros ya {verb} a muchos atletas.", translation: "Before the race, we had already helped many athletes." }],
+        },
     },
     {
         infinitive: "amar",
@@ -1856,6 +2459,12 @@ const spanishVerbs: VerbEntry[] = [
             future: { "1s": "amaré", "2s": "amarás", "3s": "amará", "1p": "amaremos", "2p": "amaréis", "3p": "amarán" },
             imperfect: { "1s": "amaba", "2s": "amabas", "3s": "amaba", "1p": "amábamos", "2p": "amabais", "3p": "amaban" },
             past_perfect: { "1s": "había amado", "2s": "habías amado", "3s": "había amado", "1p": "habíamos amado", "2p": "habíais amado", "3p": "habían amado" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "Marcos {verb} a su familia sobre todo.", translation: "Marco loves his family above all else." }],
+            future: [{ person: "1s", template: "Para siempre {verb} esta ciudad.", translation: "I will love this city forever." }],
+            imperfect: [{ person: "3p", template: "De jóvenes {verb} mucho su tierra natal.", translation: "When they were young they loved their homeland very much." }],
+            past_perfect: [{ person: "1p", template: "Antes de conocerlo, nosotros ya {verb} ese lugar.", translation: "Before knowing him, we had already loved that place." }],
         },
     },
     {
@@ -1867,6 +2476,12 @@ const spanishVerbs: VerbEntry[] = [
             imperfect: { "1s": "olvidaba", "2s": "olvidabas", "3s": "olvidaba", "1p": "olvidábamos", "2p": "olvidabais", "3p": "olvidaban" },
             past_perfect: { "1s": "había olvidado", "2s": "habías olvidado", "3s": "había olvidado", "1p": "habíamos olvidado", "2p": "habíais olvidado", "3p": "habían olvidado" },
         },
+        sentences: {
+            present: [{ person: "1s", template: "Yo {verb} a menudo las llaves de casa.", translation: "I often forget my house keys." }],
+            future: [{ person: "3s", template: "Él nunca {verb} ese día.", translation: "He will never forget that day." }],
+            imperfect: [{ person: "2p", template: "De niños vosotros siempre {verb} los deberes.", translation: "As children you (pl.) always used to forget your homework." }],
+            past_perfect: [{ person: "3p", template: "Antes del final del viaje, ellos ya {verb} el problema.", translation: "Before the end of the trip, they had already forgotten the problem." }],
+        },
     },
     {
         infinitive: "empezar",
@@ -1876,6 +2491,12 @@ const spanishVerbs: VerbEntry[] = [
             future: { "1s": "empezaré", "2s": "empezarás", "3s": "empezará", "1p": "empezaremos", "2p": "empezaréis", "3p": "empezarán" },
             imperfect: { "1s": "empezaba", "2s": "empezabas", "3s": "empezaba", "1p": "empezábamos", "2p": "empezabais", "3p": "empezaban" },
             past_perfect: { "1s": "había empezado", "2s": "habías empezado", "3s": "había empezado", "1p": "habíamos empezado", "2p": "habíais empezado", "3p": "habían empezado" },
+        },
+        sentences: {
+            present: [{ person: "3s", template: "La película {verb} a las nueve de la noche.", translation: "The movie begins at nine in the evening." }],
+            future: [{ person: "1p", template: "Mañana {verb} un nuevo proyecto.", translation: "Tomorrow we will begin a new project." }],
+            imperfect: [{ person: "3p", template: "Cada día {verb} a trabajar temprano.", translation: "Every day they used to begin working early." }],
+            past_perfect: [{ person: "1s", template: "Cuando llegué, yo ya {verb} el trabajo.", translation: "When I arrived, I had already begun the work." }],
         },
     },
 ];
